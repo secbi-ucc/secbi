@@ -5,6 +5,7 @@ __pycache__/
 # C extensions
 *.so
 *.sqlite3
+local_settings.py
 
 # Distribution / packaging
 .Python
