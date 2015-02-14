@@ -1,6 +1,6 @@
 
 
-## App Devhunter [![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)]
+## App Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
 
 
 Esta app esta construida con Python utilizando Django como framework.
