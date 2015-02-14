@@ -15,7 +15,7 @@ admin.site.login = login_required(admin.site.login)
 
 urlpatterns = patterns('',
                        # Examples:
-                       # url(r'^$', 'example.views.home', name='home'),
+                       url(r'^$', 'landing.views.base.base', name='landing'),
                        # url(r'^example/', include('example.foo.urls')),
 
                        url(r'^comunidad/', include('spirit.urls', namespace="spirit", app_name="spirit")),

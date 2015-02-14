@@ -79,12 +79,12 @@ class TopicPollVoteManyForm(forms.Form):
         if poll.choice_limit > 1:
             self.fields['choices'] = forms.ModelMultipleChoiceField(queryset=choices,
                                                                     widget=forms.CheckboxSelectMultiple,
-                                                                    label=_("Poll choices"))
+                                                                    label=_(" Encuesta"))
         else:
             self.fields['choices'] = forms.ModelChoiceField(queryset=choices,
                                                             empty_label=None,
                                                             widget=forms.RadioSelect,
-                                                            label=_("Poll choices"))
+                                                            label=_("Ecuesta"))
 
         self.fields['choices'].label_from_instance = lambda obj: smart_text(obj.description)
 

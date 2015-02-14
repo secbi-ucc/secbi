@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>DevHunter, Una iniciativa para fomentar el emprendimiento tecnológico en Córdoba. </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Una iniciativa para fomentar el emprendimiento tecnológico en Córdoba." />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="{{STATIC_URL}}landing/js/html5shiv.js"></script><![endif]-->
+    <script src="{{STATIC_URL}}landing/js/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}landing/js/skel.min.js"></script>
+    <script src="{{STATIC_URL}}landing/js/skel-layers.min.js"></script>
+    <script src="{{STATIC_URL}}landing/js/init.js"></script>
+
+    <link rel="stylesheet" href="{{STATIC_URL}}landing/css/skel.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}landing/css/style.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}landing/css/style-xlarge.css" />
+
+  </head>
+  <body class="landing">
+
+    <!-- Header -->
+      <header id="header">
+        <h1 style=" margin-top:10px;"><a href="/"><img width="90%" src="{{STATIC_URL}}landing/images/DevHunter-Logo-300.png"></a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="/comunidad">Comunidad</a></li>
+            <li><a href="https://trello.com/b/vbgSpQZs/agenda-devhunter">Agenda</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#" class="button special">Ingresar</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+  {% block content %}{% endblock %}
+
+  </body>
+</html>

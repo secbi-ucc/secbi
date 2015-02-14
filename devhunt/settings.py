@@ -45,6 +45,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
+INSTALLED_APPS += (
+    'landing',
+)
 
 try:
     from .local_settings import *
