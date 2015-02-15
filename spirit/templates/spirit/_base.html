@@ -78,7 +78,9 @@
 
     {% include 'spirit/_header.html' %}
     {% render_messages messages %}
+    <div style=" margin-left:200px; margin-right:200px;">
     {% block content %}{% endblock %}
+    </div>
     {% include 'spirit/_footer.html' %}
 
   </body>

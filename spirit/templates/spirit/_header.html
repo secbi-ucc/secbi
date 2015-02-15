@@ -1,9 +1,9 @@
 {% load spirit_tags i18n %}
 
-    <header class="header js-tabs-container">
+    <header class="header-gray header js-tabs-container">
 
     <a style="" class="header-logo" href="{% url "spirit:index" %}">
-        <img style="width:200px" src="{{STATIC_URL}}devhunt/img/DevHunter-Logo-300.svg" alt="">
+        <img style="width:200px;" src="{{STATIC_URL}}landing/images/DevHunter-Logo-300.png" alt="">
     </a>
 
         {% if user.is_authenticated %}
@@ -42,6 +42,20 @@
 
             </div>
         {% else %}
-            <a class="header-link" href="{% url "spirit:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">{% trans "Log in" %}</a>
+
+            <a class="header-link" href="{% url "spirit:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Registrate</a>
+            <span class="header-link" style="color:white">&nbsp; ó &nbsp;</span>
+            <a class="header-link" href="{% url "spirit:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa <a>
+
         {% endif %}
+
 	</header>
+    <div class="nav-fixed nav">
+        <li><a class="nav-link nav-link-active" href="/comunidad">Comunidad</a></li>
+        <li><a class="nav-link" href="">Agenda</a></li>
+        <li><a class="nav-link" href="">Proyectos</a></li>
+        <li><a class="nav-link" href="">Devs</a></li>
+    </div>
+
+
+

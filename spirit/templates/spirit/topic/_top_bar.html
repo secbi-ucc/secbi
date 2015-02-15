@@ -24,9 +24,9 @@
 
         <div class="new-topic">
             {% if category %}
-                <a class="button" href="{% url "spirit:topic-publish" category.pk %}">{% trans "Create Topic" %}</a>
+                <a class="button button-primary" href="{% url "spirit:topic-publish" category.pk %}"> <i class="fa fa-plus"></i> {% trans "Create Topic" %}</a>
             {% else %}
-                <a class="button" href="{% url "spirit:topic-publish" %}">{% trans "Create Topic" %}</a>
+                <a class="button button-primary" href="{% url "spirit:topic-publish" %}"> <i class="fa fa-plus"></i> {% trans "Create Topic" %}</a>
             {% endif %}
 		</div>
 	</div>

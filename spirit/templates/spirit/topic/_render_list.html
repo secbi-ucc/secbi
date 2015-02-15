@@ -4,6 +4,10 @@
     {% populate_bookmarks topics=page user=user  %}
 {% endif %}
 
+    <ul class="messages-info">
+        <li> <i class="fa fa-info-circle"></i> Estamos trabajando duro para desarrollar DevHunter. Por esta razón algunas funcionalidades aún no están  disponibles, excepto este foro. Siente libre de contribuir, ver el progreso o reportar algún bug en <a href="https://github.com/devhunterco/app">Github. </a></li>
+    </ul>
+
 {# topic list #}
         <div class="rows">
 
@@ -19,25 +23,16 @@
                     {% endif %}
 
                     {% if t.bookmark %}
-                       <a class="row-link" href="{{ t.bookmark.get_absolute_url }}">{{ t.title }}</a>
+                       <a class="row-link" href="{{ t.bookmark.get_absolute_url }}">{{ t.title }} <strong> Por {{t.user.email}}</strong></a>
                     {% else %}
                         <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
                     {% endif %}
                 </div>
                 <div class="row-info">
                     <div>
-                        {% if show_subcategory %}
-                            <a href="{{ t.category.get_absolute_url }}">{{ t.category.title }}</a>
-                        {% else %}
-                            {% if t.category.parent %}
-                                <a href="{{ t.category.parent.get_absolute_url }}">{{ t.category.parent.title }}</a>
-                            {% else %}
-                                <a href="{{ t.category.get_absolute_url }}">{{ t.category.title }}</a>
-                            {% endif %}
-                        {% endif %}
-                    </div><!--
-                 --><div><i class="fa fa-comment"></i> {{ t.comment_count }}</div><!--
-                 --><div title="{{ t.last_active }}"><i class="fa fa-clock-o"></i> {{ t.last_active|shortnaturaltime }}</div>
+
+                    </div>
+
                 </div>
 
 			</div>
