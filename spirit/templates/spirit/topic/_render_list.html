@@ -48,8 +48,8 @@
                     <div title="{{ t.last_active }}"><i class="fa fa-clock-o"></i> {{ t.last_active|shortnaturaltime }}</div>
                     <div><i class="fa fa-comment"></i> {{ t.comment_count }}</div>
 
-                    <img style="margin-left:20px ; border-radius: 50%;-webkit-border-radius: 50%;" src="{% gravatar_url t.user.email 40 %}" alt="">
-
+                    <a href="/comunidad/user/{{t.user.id}}"><img style="margin-left:20px ; border-radius: 50%;-webkit-border-radius: 50%;" src="{% gravatar_url t.user.email 40 %}" alt="">
+                    </a>
                 </div>
 
 			</div>
