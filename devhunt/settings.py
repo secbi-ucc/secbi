@@ -47,6 +47,7 @@ MEDIA_URL = '/media/'
 
 INSTALLED_APPS += (
     'landing',
+    'django_gravatar',
 )
 
 try:

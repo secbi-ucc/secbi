@@ -775,7 +775,7 @@ input[type="submit"].button,
 .row,
 .comment {
   padding: 12px;
- }
+  border-top: #cecece 1px solid; }
   .row:last-child,
   .comment:last-child {
     border-bottom: #cecece 1px solid; }
@@ -799,9 +799,10 @@ input[type="submit"].button,
         margin-right: 0; } }
 
 .row-link {
-  color: #444444; }
+  color: #444444;
+  font-size:19px; }
   .row-link:visited {
-    color: #979797; }
+    color: #444444; }
 
 .row-info {
   float: left;
@@ -1218,6 +1219,23 @@ ul.reply-markdown {
 .messages-info, .messages-error {
   margin-bottom: 24px;
   padding: 12px; }
+
+.meta {
+  color:#777777;
+  font-size:15px;
+}
+
+.meta-link{
+  color:#3cadd4 ;
+}
+
+.meta-panel {
+  background-color:#f8f8f8;
+  float:left;
+  padding-left:10px;
+  padding-right:10px;
+  margin-right:10px;
+}
 
 .messages-info {
   background: #e2f5fc; }

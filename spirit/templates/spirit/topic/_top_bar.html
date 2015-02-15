@@ -1,6 +1,9 @@
 {% load i18n %}
 
     <div class="container">
+            <ul class="messages-info">
+        <li> <i class="fa fa-info-circle"></i> Estamos trabajando duro para desarrollar DevHunter. Por esta razón algunas funcionalidades aún no están  disponibles, excepto este foro. Siente libre de contribuir, ver el progreso o reportar algún bug en <a href="https://github.com/devhunterco/app">Github. </a></li>
+    </ul>
 		<div class="categories js-tabs-container">
             {% if category %}
 			    <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
