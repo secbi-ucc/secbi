@@ -48,7 +48,10 @@ MEDIA_URL = '/media/'
 INSTALLED_APPS += (
     'landing',
     'django_gravatar',
+    'courriers',
 )
+
+COURRIERS_BACKEND_CLASS = 'courriers.backends.mailjet.MailjetBackend'
 
 try:
     from .local_settings import *

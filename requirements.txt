@@ -2,11 +2,14 @@ Django==1.7.4
 Pillow==2.6.2
 Whoosh==2.5.7
 argparse==1.2.1
+django-courriers==0.5.15
 django-debug-toolbar==1.2.2
 django-djconfig==0.1.8
 django-gravatar2==1.2.1
 django-haystack==2.3.1
 django-infinite-scroll-pagination==0.1.3
+django-separatedvaluesfield==0.2
+mailjet==1.4.0
 mistune==0.3.1
 pytz==2014.10
 sqlparse==0.1.14
