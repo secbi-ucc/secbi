@@ -2,7 +2,6 @@ Django==1.7.4
 Pillow==2.6.2
 Whoosh==2.5.7
 argparse==1.2.1
-django-courriers==0.5.15
 django-debug-toolbar==1.2.2
 django-djconfig==0.1.8
 django-gravatar2==1.2.1
