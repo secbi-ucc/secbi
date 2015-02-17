@@ -4,36 +4,36 @@
 		reset: 'full',
 		breakpoints: {
 			global: {
-				href: "/static/landing/css/style.css",
+				href: "/static/landing/stylesheets/styles.css",
 				containers: 1400,
 				grid: { gutters: ['2em', 0] }
 			},
 			xlarge: {
 				media: '(max-width: 1680px)',
-				href: "/static/landing/css/style-xlarge.css",
+				href: "/static/landing/stylesheets/style-xlarge.css",
 				containers: 1200
 			},
 			large: {
 				media: '(max-width: 1280px)',
-				href: "/static/landing/css/style-large.css",
+				href: "/static/landing/stylesheets/style-large.css",
 				containers: 960,
 				grid: { gutters: ['1.5em', 0] },
 				viewport: { scalable: false }
 			},
 			medium: {
 				media: '(max-width: 980px)',
-				href: '/static/landing/css/style-medium.css',
+				href: '/static/landing/stylesheets/style-medium.css',
 				containers: '90%!'
 			},
 			small: {
 				media: '(max-width: 736px)',
-				href: '/static/landing/css/style-small.css',
+				href: '/static/landing/stylesheets/style-small.css',
 				containers: '90%!',
 				grid: { gutters: ['1.25em', 0] }
 			},
 			xsmall: {
 				media: '(max-width: 480px)',
-				href: '/static/landing/css/style-xsmall.css'
+				href: '/static/landing/stylesheets/style-xsmall.css'
 			}
 		},
 		plugins: {
