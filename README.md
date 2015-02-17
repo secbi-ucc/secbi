@@ -1,6 +1,6 @@
 
 
-## App Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
+## Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
 
 
 Esta app esta construida con Python utilizando Django como framework.
@@ -19,7 +19,7 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 - [ ] Integración con github
 - [x] Admin interface
 
-### Frameworks / Librerias 
+### Frameworks / API's 
 
 - [Django 1.7](https://github.com/django/django)
 - [Spirit 0.1.3](https://github.com/nitely/Spirit/tree/master)
