@@ -1,0 +1,17 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Closed topics" %}{% endblock %}
+
+{% block content %}
+
+    {% include "foro/admin/_side_menu.html" with active="topics" %}
+
+    <h1 class="headline">{% trans "Closed topics" %}</h1>
+
+    {% include "foro/admin/topic/_tabs.html" with active_tab="closed" %}
+
+    {% include "foro/topic/_render_page_list.html" %}
+
+{% endblock %}

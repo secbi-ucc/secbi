@@ -1,0 +1,20 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Resend activation email" %}{% endblock %}
+
+{% block content %}
+
+    <h1 class="headline">{% trans "Resend activation email" %}</h1>
+
+    <div class="login">
+        <form action="." method="post">
+            {% csrf_token %}
+            {% include "foro/_form.html" %}
+
+            <input class="button" type="submit" name="post" value="{% trans "Resend email" %}" />
+        </form>
+    </div>
+
+{% endblock %}

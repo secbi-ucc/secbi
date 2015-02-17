@@ -1,0 +1,22 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Edit comment" %}{% endblock %}
+
+{% block content %}
+
+    <h1 class="headline">{% trans "Edit comment" %}</h1>
+
+    <form action="." method="post" class="js-reply">
+        {% csrf_token %}
+        {% include "foro/_form.html" %}
+
+        <div class="container">
+            {% include "foro/comment/_editor.html" %}
+
+            <input class="button reply-button" type="submit" value="{% trans "Publish" %}" />
+        </div>
+    </form>
+
+{% endblock %}

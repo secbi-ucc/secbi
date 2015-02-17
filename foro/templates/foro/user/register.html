@@ -1,0 +1,34 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Register" %}{% endblock %}
+
+{% block head-extra %}
+    <script>
+
+	$( document ).ready(function() {
+
+        $( "input[name=honeypot]" ).hide();
+        $( "label[for=id_honeypot]" ).hide();
+
+	});
+
+	</script>
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="headline">{% trans "Register" %}</h1>
+
+
+
+    <form action="." method="post">
+        {% csrf_token %}
+        {% include "foro/_form.html" %}
+
+        <input class="button" type="submit" name="post" value="{% trans "Register" %}" />
+    </form>
+
+
+{% endblock %}

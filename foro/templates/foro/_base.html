@@ -1,0 +1,93 @@
+{% load foro_tags i18n %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}{% endblock %} - Devhunter</title>
+    <meta name="description" content="{{ config.site_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+
+	<link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/github.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/jquery.atwho.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/styles.css">
+
+
+
+    <script src="{{ STATIC_URL }}foro/scripts/vendors/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/vendors/highlightjs/highlight.min.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/util.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/tab.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/postify.js"></script>
+    <script src="{{ STATIC_URL }}foro/scripts/social_share.js"></script>
+
+    {% if user.is_authenticated %}
+        <script src="{{ STATIC_URL }}foro/scripts/vendors/atwho/jquery.caret.min.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/vendors/atwho/jquery.atwho.min.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/vendors/marked/marked.min.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/vendors/waypoints/waypoints.min.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/store.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/editor_image_upload.js"></script>
+	    <script src="{{ STATIC_URL }}foro/scripts/editor.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/emoji_list.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/like.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/bookmark.js"></script>
+        <script src="{{ STATIC_URL }}foro/scripts/notification.js"></script>
+    {% endif %}
+
+    {% if user.is_moderator %}
+        <script src="{{ STATIC_URL }}foro/scripts/move_comments.js"></script>
+    {% endif %}
+
+    <script>
+
+	$( document ).ready(function() {
+
+        $.tab();
+
+        $( 'a.js-post' ).postify( {
+            csrfToken: "{{ csrf_token }}",
+        } );
+
+        {% if user.is_authenticated %}
+            $.notification( {
+                notificationUrl: "{% url "foro:topic-notification-ajax" %}",
+                notificationListUrl: "{% url "foro:topic-notification-list-unread" %}",
+                mentionTxt: "{% trans "{user} has mention you on {topic}" %}",
+                commentTxt: "{% trans "{user} has commented on {topic}" %}",
+                showAll: "{% trans "Show all" %}",
+                empty: "{% trans "No new notifications, yet" %}",
+                unread: "{% trans "unread" %}",
+            } );
+        {% endif %}
+
+	});
+
+	</script>
+
+    {% block head-extra %}{% endblock %}
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    {% include 'foro/_header.html' %}
+    {% render_messages messages %}
+    {% block content %}{% endblock %}
+    {% include 'foro/_footer.html' %}
+
+  </body>
+
+</html>

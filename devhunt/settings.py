@@ -1,27 +1,13 @@
 """
-Django settings for devhunt project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
+Configuraciones de Django para el proyecto devhunt.
 """
-
 from __future__ import unicode_literals
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-from spirit.settings import *
+# Extender configuraciones del la app para el foro
+from foro.settings import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
 
@@ -32,6 +18,8 @@ ALLOWED_HOSTS = ['*']
 ROOT_URLCONF = 'devhunt.urls'
 
 WSGI_APPLICATION = 'devhunt.wsgi.application'
+
+# Zona horaia destino
 
 TIME_ZONE = 'America/Bogota'
 
@@ -52,10 +40,18 @@ INSTALLED_APPS += (
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+# Configuraciones para trabajar en local y en produccion
+
+# Incluir configuracon local de ejemplo
+# Descargar -> https://gist.github.com/5a6fa6eebb997a709040.git
+# o hacer su propia configuracion local.
+
 try:
     from .local_settings import *
 except ImportError:
     pass
+
+# Para servidor de produccion
 
 try:
     from .production_settings import *

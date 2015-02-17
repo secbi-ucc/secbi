@@ -1,0 +1,13 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Comunidad{% endblock %}
+
+{% block content %}
+
+    {% include "foro/topic/_top_bar.html" with category=None categories=categories %}
+
+    {% include "foro/topic/_render_page_list.html" %}
+
+{% endblock %}
