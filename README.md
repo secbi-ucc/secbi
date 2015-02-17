@@ -19,6 +19,12 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 - [ ] Integración con github
 - [x] Admin interface
 
+### Frameworks / Librerias 
+
+- [Django 1.7](https://github.com/django/django)
+- [Spirit 0.1.3](https://github.com/nitely/Spirit/tree/master)
+- [Github API](https://developer.github.com/v3/)
+- [Trello API](https://trello.com/docs/)
 
 
 ### Licencia
