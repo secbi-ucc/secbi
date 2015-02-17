@@ -19,15 +19,6 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 - [ ] Integración con github
 - [x] Admin interface
 
-### Requsitos
-
-### Instalación local
-
-### Arquitectura
-
-### Modulos 
-
-### Contribuir 
 
 
 ### Licencia
