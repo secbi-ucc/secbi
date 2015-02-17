@@ -2,6 +2,8 @@
 
     <header class="header-gray header js-tabs-container">
 
+    <div class="container">
+
     <a style="" class="header-logo" href="{% url "spirit:index" %}">
         <img style="width:200px;" src="{{STATIC_URL}}landing/images/DevHunter-Logo-300.png" alt="">
     </a>
@@ -49,12 +51,16 @@
 
         {% endif %}
 
+
+
 	</header>
     <div class="nav-fixed nav">
+        <div class="container">
         <li><a class="nav-link nav-link-active" href="/comunidad">Comunidad</a></li>
         <li><a class="nav-link" href="">Agenda</a></li>
         <li><a class="nav-link" href="">Proyectos</a></li>
         <li><a class="nav-link" href="">Devs</a></li>
+        </div>
     </div>
 
 

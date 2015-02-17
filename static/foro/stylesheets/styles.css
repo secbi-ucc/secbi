@@ -669,8 +669,6 @@ input[type="submit"].button,
 .header-gray{
   background-color:gray;
   padding-top:5px;
-  padding-left:200px;
-  padding-right:200px;
   padding-bottom:5px;
 
 }
@@ -718,8 +716,6 @@ input[type="submit"].button,
 
 .footer-container {
   *zoom: 1;
-  margin-left: 200px;
-  margin-right: 200px;
   }
   .footer-container:before, .footer-container:after {
     content: " ";
@@ -916,15 +912,14 @@ input.move-comment-checkbox {
   margin: 0; }
 
 .nav {
-  font-size: 14px; }
+  font-size: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px; }
   .nav .fa {
     margin-left: 12px; }
 
 .nav-fixed {
   background-color:#f8f8f8;
-  padding-left:200px;
-  padding-top:10px;
-  padding-bottom:10px;
   border-top: 1px solid #e4e2e2;
   border-bottom: 1px solid #e4e2e2;
 }
@@ -934,8 +929,14 @@ input.move-comment-checkbox {
   font-size:16px;
 }
 
+.nav-link:hover {
+  text-decoration:none;
+}
+
 .nav-link-active{
   border-bottom: 3px solid #3cadd4;
+  text-decoration: none;
+  background-color: #eee;
 }
 
 .comments {

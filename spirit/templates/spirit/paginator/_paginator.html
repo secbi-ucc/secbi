@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<ul class="paginator">
+<ul class=" container">
 	<li class="paginator-pages">{% blocktrans with number=page.number num_pages=page.paginator.num_pages %}Page {{ number }} of {{ num_pages }}{% endblocktrans %}</li>
     {% if page.has_other_pages %}
         {% if page.number == 1 %}

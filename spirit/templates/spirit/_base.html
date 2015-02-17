@@ -9,10 +9,17 @@
     <meta name="description" content="{{ config.site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+
 	<link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/font-awesome.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/github.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/vendors/jquery.atwho.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}foro/stylesheets/styles.css">
+
+
 
     <script src="{{ STATIC_URL }}foro/scripts/vendors/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}foro/scripts/vendors/highlightjs/highlight.min.js"></script>
@@ -78,9 +85,7 @@
 
     {% include 'spirit/_header.html' %}
     {% render_messages messages %}
-    <div style=" margin-left:200px; margin-right:200px;">
     {% block content %}{% endblock %}
-    </div>
     {% include 'spirit/_footer.html' %}
 
   </body>
