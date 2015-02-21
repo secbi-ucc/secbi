@@ -27,7 +27,7 @@
                             <i class="fa fa-chevron-up"></i> <br>
                             <p>{{t.view_count}}</p>
                         </div>
-                       <a class="row-link" href="{{ t.bookmark.get_absolute_url }}">{{ t.title }}</a>
+                       <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
 
                        <p class="meta"> {{t.date|date:"d M Y"}} por <a class="meta-link" href="/comunidad/user/{{t.user.id}}">{{t.user}}</a> en {% if show_subcategory %}
                             <a class="meta-link" href="{{ t.category.get_absolute_url }}">{{ t.category.title }} </a>
