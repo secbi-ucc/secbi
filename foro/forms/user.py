@@ -50,16 +50,8 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "location", "timezone")
-
-    def __init__(self, *args, **kwargs):
-        super(UserProfileForm, self).__init__(*args, **kwargs)
-        now = timezone.localtime(timezone.now())
-        self.fields['timezone'].help_text = _('Current time is: %(date)s %(time)s') % {
-            'date': defaultfilters.date(now),
-            'time': defaultfilters.time(now)
-        }
-
+        fields = ("first_name", "last_name", "bio", "company", "web_site",
+                  "linkedin_url", "github_username",  "trello_username")
 
 class LoginForm(AuthenticationForm):
 

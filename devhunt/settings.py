@@ -40,18 +40,24 @@ INSTALLED_APPS += (
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# Configuraciones para trabajar en local y en produccion
 
-# Incluir configuracon local de ejemplo
-# Descargar -> https://gist.github.com/5a6fa6eebb997a709040.git
-# o hacer su propia configuracion local.
+"""
+Configuraciones para trabajar en local y en produccion
+
+Incluir configuracon local de ejemplo
+Descargar -> https://gist.github.com/5a6fa6eebb997a709040.git
+o hacer su propia configuracion local.
+"""
 
 try:
     from .local_settings import *
 except ImportError:
     pass
 
-# Para servidor de produccion
+"""
+Solo para servidor de produccion, de esta forma se protejen claves secretas
+como la conexion a la db, api keys y la configuracion smtp.
+"""
 
 try:
     from .production_settings import *

@@ -6,6 +6,8 @@
 
 {% block content %}
 
+<div class="container">
+
     <h1 class="headline">{% trans "Login" %}</h1>
 
     <div class="login">
@@ -20,7 +22,7 @@
     <div class="login-links">
 		<a class="login-link" href="{% url "foro:user-register" %}">{% trans "Create an account" %}</a>
 		<a class="login-link" href="{% url "foro:password-reset" %}">{% trans "I don't know my password" %}</a>
-        <a class="login-link" href="{% url "foro:resend-activation" %}">{% trans "Resend activation email" %}</a>
+        <a class="login-link" href="{% url "foro:resend-activation" %}">Reenviar correo de activación </a>
 	</div>
-
+</div>
 {% endblock %}

@@ -25,6 +25,8 @@
 
 {% block content %}
 
+<div class="container">
+
     <h1 class="headline">{% trans "Publish topic" %}</h1>
 
     <form action="." method="post" class="js-reply">
@@ -33,14 +35,6 @@
         {# topic #}
         {% include "foro/_form.html" %}
 
-        {# poll #}
-        <dl class="preference">
-            <dt class="preference-label">{% trans "Poll" %}:</dt>
-
-            {% if not pform.errors and not pformset|has_errors %}
-                <dd class="preference-desc"><a class="js-poll-add" href="#"><i class="fa fa-bar-chart-o"></i> {% trans "Add poll" %}</a></dd>
-            {% endif %}
-        </dl>
 
         <div class="js-poll-form" style="{% if not pform.errors and not pformset|has_errors %}display:none;{% endif %}margin-left:20px;">
             {% include "foro/_form.html" with form=pform %}
@@ -61,5 +55,5 @@
             <input class="button reply-button" type="submit" value="{% trans "Publish" %}" />
         </div>
     </form>
-
+</div>
 {% endblock %}
