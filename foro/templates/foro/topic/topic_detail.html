@@ -5,7 +5,7 @@
 {% block title %}{{ topic.title }}{% endblock %}
 
 {% block content %}
-
+<div class="container">
         <ul class="nav">
             <li><a href="{% url "foro:index" %}" >{% trans "Main" %}</a><i class="fa fa-chevron-right"></i></li>
 
@@ -106,6 +106,7 @@
                     </div>
 
                 </div>
+</div>
             {% endif %}
 
             <script>

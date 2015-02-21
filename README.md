@@ -12,17 +12,24 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 <del>Si! , remplazaremos a Facebook</del>
 
 
+
 ## Configuración 
 
 Incluir el archivo `local_settigs.py` en el directorio devhunter [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+=======
+### Relase v0.2
+
+- [ ] Integración Auth con github
+- [ ] Modulo: chat real-time con Nodejs
 
 ### Relase v0.1
 
 - [x] Pefiles
 - [x] Comentarios (con formato, imagenes)
 - [x] Notificaciones(Interno y mail)
-- [ ] Integración con github
 - [x] Admin interface
+
+
 
 ### Frameworks / API's 
 

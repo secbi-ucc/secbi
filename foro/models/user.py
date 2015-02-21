@@ -22,8 +22,14 @@ class AbstractForumUser(models.Model):
     location = models.CharField(_("location"), max_length=75, blank=True)
     last_seen = models.DateTimeField(_("last seen"), auto_now=True)
     last_ip = models.GenericIPAddressField(_("last ip"), blank=True, null=True)
-    timezone = models.CharField(_("time zone"), max_length=32, choices=TIMEZONE_CHOICES, default='UTC')
+    timezone = models.CharField(_("time zone"), max_length=32, choices=TIMEZONE_CHOICES, default='Etc/GMT+5')
     is_administrator = models.BooleanField(_('administrator status'), default=False)
+    bio = models.TextField(_("Bio"), max_length=300, blank=True)
+    linkedin_url = models.URLField(_("Url perfil likedin"), max_length=200, null=True, blank=True)
+    github_username = models.CharField(_("Usuario en github"), max_length=30, null=True, blank=True)
+    trello_username = models.CharField(_("Usuario en Trello"), max_length=30, null=True, blank=True)
+    web_site = models.URLField(_("Sitio web"), max_length=200, null=True, blank=True)
+    company = models.CharField(_("Universidad/Empresa"), max_length=80, null=True, blank=True)
     is_moderator = models.BooleanField(_('moderator status'), default=False)
     # is_verified = models.BooleanField(_('verified'), default=False)
 
@@ -46,9 +52,9 @@ class AbstractForumUser(models.Model):
 class AbstractUser(AbstractBaseUser, PermissionsMixin, AbstractForumUser):
     # almost verbatim copy from the auth user model
     # adds username(db_index=True), email(unique=True, blank=False, max_length=254)
-    username = models.CharField(_("username"), max_length=30, unique=True, db_index=True,
-                                help_text=_('Required. 30 characters or fewer. Letters, numbers and '
-                                            '@/./+/-/_ characters'),
+    username = models.CharField(_("Nombre de usuario"), max_length=30, unique=True, db_index=True,
+                                help_text=_('Requerido. 30 caracteres o menos. Letras, Numeros y caracteres especiales'
+                                            '@/./+/-/_ solamente'),
                                 validators=[
                                     validators.RegexValidator(re.compile('^[\w.@+-]+$'), _('Enter a valid username.'),
                                                               'invalid')

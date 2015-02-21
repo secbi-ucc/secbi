@@ -1,42 +1,58 @@
 {% load foro_tags i18n %}
 
+<div class="container">
+    <div class="profile-img ">
+        <br>
+		<img  style="vertical-align: initial;" class="profile-avatar" src="{% get_gravatar_url user=p_user size=140 %}" />
 
-    <div class="profile-img">
-		<img class="profile-avatar" src="{% get_gravatar_url user=p_user size=140 %}" />
 
         <div class="profile-info">
                 <h2>{{p_user.first_name}} {{p_user.last_name}} <span style="color:gray; font-size:16px">(@{{ p_user.username }})</span></h2>
 
-                <p class="profile-field">Estudiante de Ingenieria de Sistemas en Universidad Cooperativa </p>
-                <p class="profile-field">Pyhon | Linux | Nodejs  </p>
-                <p class="profile-field"><a href="">juliocesar.io</a></p>
+                <p class="profile-field"> {{p_user.bio}}</p>
+
+                <p class="profile-field"> {{p_user.company}}</p>
+
+                <p><a href="{{p_user.web_site}}">{{p_user.web_site}}</a></p>
+
 
                 <ul>
-                <a href=""><i class="fa fa-github"></i></a>
-                <a href=""><i class="fa fa-linkedin-square"></i></a>
-                <a href=""> <i class="fa fa-trello"></i></a>
-
-
-
-
+                {% if p_user.github_username %}
+                <a class="social-profile"  href="https://github.com/{{p_user.github_username}}"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if p_user.trello_username %}
+                <a class="social-profile"  href="https://trello.com/{{p_user.trello_username}}"><i class="fa fa-trello"></i></a>
+                {% endif %}
+                {% if p_user.linkedin_url %}
+                <a  class="social-profile" href="{{p_user.linkedin_url}}"><i class="fa fa-linkedin"></i></a>
                 </ul>
-
-
-
+                {% endif %}
 
         </div>
+
+         {% ifequal user.username p_user.username %}
+        <div class="">
+            <a class="button" href="{% url "foro:profile-update" %}"><i class="fa fa-cog"></i> {% trans "Preferences" %}</a>
+        </div>
+    {% else %}
+        <div class="private-message">
+            <a class="button" href="{% url "foro:private-publish" user_id=p_user.pk %}"><i class="fa fa-envelope"></i> {% trans "Private Message" %}</a>
+        </div>
+    {% endifequal %}
 
 
 
 	</div>
+
+    <!---
 
     <div class="profile-info">
 		<ul class="profile-track">
 			<li>
 				<div class="profile-title">{% trans "Joined at" %}</div>
 				<div class="profile-date">{{ p_user.date_joined|shortnaturaltime }}</div>
-			</li><!--
-		 --><li>
+			</li>
+		 <li>
 				<div class="profile-title">{% trans "Seen" %}</div>
 				<div class="profile-date">{{ p_user.last_seen|shortnaturaltime }}</div>
 			</li>
@@ -49,25 +65,13 @@
             {% endif %}
 		</ul>
 	</div>
+-->
 
-    {% ifequal user.username p_user.username %}
-        <div class="profile-preferences">
-            <a class="button" href="{% url "foro:profile-update" %}"><i class="fa fa-cog"></i> {% trans "Preferences" %}</a>
-        </div>
-    {% else %}
-        <div class="private-message">
-            <a class="button" href="{% url "foro:private-publish" user_id=p_user.pk %}"><i class="fa fa-envelope"></i> {% trans "Private Message" %}</a>
-        </div>
-    {% endifequal %}
 
-    {% if user.is_administrator %}
-        <div class="profile-preferences">
-            <a class="button" href="{% url "foro:admin-user-edit" user_id=p_user.pk %}"><i class="fa fa-cog"></i> {% trans "Edit user" %}</a>
-        </div>
-    {% endif %}
 
     <ul class="tabs">
 		<li><a class="tab-link{% ifequal active_tab 0 %} is-selected{% endifequal %}" href="{% url "foro:profile-detail" pk=p_user.pk slug=p_user.slug %}" >{% trans "Comments" %}</a></li><!--
 	 --><li><a class="tab-link{% ifequal active_tab 1 %} is-selected{% endifequal %}" href="{% url "foro:profile-topics" pk=p_user.pk slug=p_user.slug %}" >{% trans "Topics" %}</a></li><!--
 	 --><li><a class="tab-link{% ifequal active_tab 2 %} is-selected{% endifequal %}" href="{% url "foro:profile-likes" pk=p_user.pk slug=p_user.slug %}" >{% trans "Likes" %}</a></li>
 	</ul>
+</div>

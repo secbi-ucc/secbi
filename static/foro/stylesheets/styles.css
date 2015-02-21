@@ -552,7 +552,6 @@ h2 {
 .tabs li,
 .admin-tabs li,
 .header-tabs li,
-.nav li,
 .comment-date li,
 .comment-actions li,
 .paginator li,
@@ -664,7 +663,13 @@ input[type="submit"].button,
   .side-menu-close:focus, .side-menu-close:hover {
     color: #fefefe; }
 
+.social-profile{
 
+  padding-right:5px;
+  font-size:22px;
+  margin-bottom:15px;
+
+}
 
 .header-gray{
   background-color:gray;
@@ -1125,15 +1130,13 @@ ul.reply-markdown {
   height: 140px;
   display: inline-block;
   margin-right:30px;
-  border-radius: 100px; }
+  border-radius: 100px;
+  float:left; }
 
 .profile-username {
   font-size: 21px; }
 
-.profile-info {
-  margin-bottom: 24px;
-  margin-top:20px;
-    display: inline-block; }
+
 
 .profile-field {
   line-height: 30%;
