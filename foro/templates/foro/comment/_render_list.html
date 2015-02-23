@@ -1,4 +1,4 @@
-f{% load foro_tags i18n %}
+{% load foro_tags i18n %}
 
 {% if user.is_authenticated %}
     {% populate_likes comments=page user=user %}
