@@ -15,7 +15,7 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 
 ## Configuración 
 
-Incluir el archivo `local_settigs.py` en el directorio devhunter [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+Incluir el archivo `local_settigs.py` en el directorio devhunt [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
 
 
 ### Relase v0.2
