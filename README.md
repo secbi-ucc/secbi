@@ -9,11 +9,9 @@ La idea es que podamos tener nuestra propia red, planear, comunicar, organizar y
 
 Inicialmente se trabajara en un modulo que ponga a disposición todas las funcionalidades de un foro, cualquiera podra registrase y participar.
 
-<del>Si! , remplazaremos a Facebook</del>
-
-
 
 ## Configuración 
+
 
 - Incluir el archivo `local_settigs.py` en el directorio devhunter [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
 -  Instalar virtualenv `sudo pip install virtualenv`
