@@ -9,13 +9,19 @@ La idea es que podamos tener nuestra propia red, planear, comunicar, organizar y
 
 Inicialmente se trabajara en un modulo que ponga a disposición todas las funcionalidades de un foro, cualquiera podra registrase y participar.
 
-<del>Si! , remplazaremos a Facebook</del>
-
-
 
 ## Configuración 
 
-Incluir el archivo `local_settigs.py` en el directorio devhunt [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+
+- Incluir el archivo `local_settigs.py` en el directorio devhunter [Descargar aquí](https://gist.github.com/uzi200/5a6fa6eebb997a709040)
+-  Instalar virtualenv `sudo pip install virtualenv`
+-  En el repo hacer `virtualenv env && source env/bin/activate`
+-  Instalar todas las dependencias `pip install -r requirements.txt`
+-  Migrar la base de datos `./manage.py migrate`
+-  Sincronizar los modelos `./manage.py syncdb`
+-  Crear las tablas para los indices del cache `./manage.py createcachetable foro_cache`
+-  Correr el servidor `./manage.py runserver`
+-  Happy coding :D 
 
 
 ### Relase v0.2
