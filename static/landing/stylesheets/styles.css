@@ -5,7 +5,7 @@
 /* Basic */
 
 	body {
-		background: gray;
+		background: #fff;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -55,7 +55,7 @@
 		color: #474747;
 		font-weight: 700;
 		line-height: 1em;
-		margin: 0 0 1em 0;
+		margin: 0 0 0.5em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -157,6 +157,7 @@
 
 	section.special, article.special {
 		text-align: center;
+		font-size: 1.1em;
 	}
 
 	header p {
@@ -1026,7 +1027,7 @@
 
 	#banner {
 
-
+		background: gray;
 		color: #ffffff;
 		padding: 14em 0em 0em;
 		text-align: center;
@@ -1052,7 +1053,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0em 4em;
+		padding: 3em 0em 4em;
 		/* Style 1 Wrapper */
 		/* Style 2 Wrapper */
 		/* Style 3 Wrapper */
@@ -1073,28 +1074,33 @@
 					color: #858585;
 				}
 
-		.wrapper.style2 .profiles {
+		.wrapper.style3 .profiles {
 			border-bottom: 1px solid rgba(144, 144, 144, 0.25);
 			border-top: 1px solid rgba(144, 144, 144, 0.25);
 			margin-bottom: 4em;
 			padding-top: 4em;
 		}
 
-		.wrapper.style2 .profile {
+		.wrapper.style3 .profile {
 			margin-bottom: 2em;
 			text-align: left;
 		}
 
-			.wrapper.style2 .profile img {
+			.wrapper.style3 .profile img {
 				border-radius: 50%;
 				float: left;
 				margin-bottom: 1em;
 				margin-right: 1em;
 			}
 
-			.wrapper.style2 .profile h4 {
+			.wrapper.style3 .profile h4 {
+				color: #fff;
 				margin-bottom: 0;
 				margin-top: 1em;
+			}
+
+			strong.profile {
+				color: #fff;
 			}
 
 		.wrapper.style2 footer {
