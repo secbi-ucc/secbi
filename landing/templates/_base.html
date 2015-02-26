@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <title>DevHunter, Una iniciativa para fomentar el emprendimiento tecnológico en Córdoba. </title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Una iniciativa para fomentar el emprendimiento tecnológico en Córdoba." />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="{{STATIC_URL}}landing/js/html5shiv.js"></script><![endif]-->
-    <script src="{{STATIC_URL}}landing/scripts/jquery.min.js"></script>
-    <script src="{{STATIC_URL}}landing/scripts/skel.min.js"></script>
-    <script src="{{STATIC_URL}}landing/scripts/skel-layers.min.js"></script>
-    <script src="{{STATIC_URL}}landing/scripts/init.js"></script>
+    <title>DevHunter, Una iniciativa para fomentar el emprendimiento tecnológico en Córdoba.</title>
+    <link href="{{STATIC_URL}}landing/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}landing/stylesheets/landing-page.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{STATIC_URL}}landing/stylesheets/skel.css" />
-    <link rel="stylesheet" href="{{STATIC_URL}}landing/stylesheets/styles.css" />
-    <link rel="stylesheet" href="{{STATIC_URL}}landing/stylesheets/style-xlarge.css" />
+    <!-- Custom Fonts -->
+    <link href="{{STATIC_URL}}landing/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <!--Icons-->
     <link rel="apple-touch-icon" sizes="57x57" href="{{STATIC_URL}}favicons/apple-touch-icon-57x57.png">
@@ -34,26 +38,44 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="{{STATIC_URL}}favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+</head>
 
-  </head>
+<body>
 
-  <body class="landing">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav visible-xs" role="navigation">
+        <div class="container topnav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="/">DevHunter.co</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/comunidad" class="button">Comunidad</a>
+                    </li>
+                    <li>
+                        <a href="https://trello.com/b/vbgSpQZs/agenda-devhunter">Agenda</a>
+                    </li>
+                    <li>
+                        <a href="#">Proyectos</a>
+                    </li>
+                    <li><a class="btn btn-default" href="/comunidad/user/login/?next=/comunidad/">Ingresar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Header -->
-      <header id="header">
-        <h1 style=" margin-top:15px;"><a href="/"><img width="300px;" src="{{STATIC_URL}}landing/images/DevHunter-Logo-300.png"></a></h1>
-        <nav id="nav">
-          <ul>
-            <li><a href="/comunidad">Comunidad</a></li>
-            <li><a href="https://trello.com/b/vbgSpQZs/agenda-devhunter">Agenda</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="/comunidad/user/login/?next=/comunidad/" class="button special">Ingresar</a></li>
-          </ul>
-        </nav>
-      </header>
-
-
-  {% block content %}{% endblock %}
-
-  </body>
+    {% block content %}{% endblock %}
+    
+    <!-- jQuery -->
+    <script src="{{STATIC_URL}}landing/scripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{STATIC_URL}}landing/scripts/bootstrap.min.js"></script>
+</body>
 </html>
