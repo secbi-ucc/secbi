@@ -6,5 +6,6 @@ from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns('',
-                       url(r'^$', 'feed.views.base.inicio', name='inicio')
+                       url(r'^$', 'feed.views.base.inicio', name='inicio'),
+                       url(r'^sobre/', 'feed.views.base.sobre', name='sobre')
                        )

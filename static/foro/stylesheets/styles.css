@@ -766,13 +766,15 @@ input[type="submit"].button,
 .rows {
   margin-bottom: 24px; }
 
-.row,
 .comment {
   padding: 12px;
   border-top: #cecece 1px solid; }
-  .row:last-child,
   .comment:last-child {
     border-bottom: #cecece 1px solid; }
+
+.row{
+  padding: 12px; }
+
 
 .row-title {
   float: left;
