@@ -739,6 +739,18 @@ input[type="submit"].button,
 .field {
   margin-bottom: 24px; }
 
+.fixed-chat{
+  position: fixed;
+  bottom:0;
+  background-color:#F6F7F8;
+  border: 1px solid #CECECE;
+  float:right;
+  padding:10px;
+  width:150px;
+  right:0;
+  z-index:1000;
+}
+
 .checkboxes {
   overflow: auto;
   max-height: 144px;
