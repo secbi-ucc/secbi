@@ -9,3 +9,8 @@ def inicio(request):
 def sobre(request):
 
     return render(request, 'sobre.html')
+
+
+def proyectos(request):
+
+    return render(request, 'proyectos.html')

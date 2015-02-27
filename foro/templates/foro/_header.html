@@ -56,11 +56,11 @@
 	</header>
     <div class="nav-fixed nav">
         <div class="container">
-        <li><a class="nav-link  nav-link-active" href="/">Inicio</a></li>
-        <li><a class="nav-link" href="/discusion">Discusion</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion</a></li>
         <li><a class="nav-link" href="">Agenda</a></li>
-        <li><a class="nav-link" href="">Proyectos</a></li>
-        <li><a class="nav-link" href="/sobre">Sobre</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/proyectos/" %} nav-link-active {% endif %}" href="/proyectos">Proyectos</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="/equipo">Equipo</a></li>
         </div>
     </div>
 
