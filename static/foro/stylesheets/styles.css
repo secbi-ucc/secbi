@@ -21,7 +21,8 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0; }
+  margin: 0;
+ }
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -744,7 +745,7 @@ input[type="submit"].button,
   bottom:0;
   background-color:#F6F7F8;
   border: 1px solid #CECECE;
-  float:right;
+  margin-right:8px;
   padding:10px;
   width:150px;
   right:0;
