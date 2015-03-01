@@ -5,7 +5,7 @@
 {% block title %}{% trans "Category list" %}{% endblock %}
 
 {% block content %}
-
+    <div class="container">
     {% include "foro/admin/_side_menu.html" with active="categories" %}
 
     <h1 class="headline">{% trans "Category list" %}</h1>
@@ -47,5 +47,5 @@
         {% endfor %}
 
 	</div>
-
+    </div>
 {% endblock %}

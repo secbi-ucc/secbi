@@ -5,11 +5,11 @@
 {% block title %}{% trans "Mods" %}{% endblock %}
 
 {% block content %}
-
+	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="users" %}
 
     <h1 class="headline">{% trans "Mods" %}</h1>
 
     {% include "foro/admin/user/_user_list.html" with active_tab="mods" %}
-
+    </div>
 {% endblock %}

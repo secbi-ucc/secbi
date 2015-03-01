@@ -5,7 +5,7 @@
 {% block title %}{% trans "Flag" %}{% endblock %}
 
 {% block content %}
-
+    <div class="container">
     <ul class="nav">
         <li><a href="{% url "foro:admin" %}" >{% trans "Admin" %}</a><i class="fa fa-chevron-right"></i></li><!--
      --><li><a href="{% url "foro:admin-flag" %}" >{% trans "Flags" %}</a></li>
@@ -85,5 +85,5 @@
 
 		</div>
     {% endfor %}
-
+    </div>
 {% endblock %}

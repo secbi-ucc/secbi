@@ -3,7 +3,7 @@
 {% yt_paginator_autopaginate users as page %}
 
 {% include "foro/admin/user/_tabs.html" with active_tab=active_tab %}
-
+<div class="container">
 <div class="rows">
 
     {% for u in page %}
@@ -13,5 +13,5 @@
     {% endfor %}
 
 </div>
-
+</div>
 {% render_yt_paginator page %}

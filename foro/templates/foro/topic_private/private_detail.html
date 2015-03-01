@@ -8,7 +8,7 @@
 
     {% get_comment_list topic=topic as comments %}
     {% paginator_autopaginate comments per_page=COMMENTS_PER_PAGE as page %}
-
+        <div class="container">
         <ul class="nav">
             <li><a href="{% url "foro:private-list" %}" >{% trans "Private topics" %}</a></li>
         </ul>
@@ -61,7 +61,7 @@
             </div>
 
         </div>
-
+        </div>
             <script>
                 $( document ).ready(function() {
 

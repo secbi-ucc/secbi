@@ -1,7 +1,7 @@
 {% extends "foro/_base.html" %}
 
 {% load i18n %}
-
+{% load gravatar %}
 {% block title %}Comunida{% endblock %}
 
 {% block content %}
@@ -36,14 +36,15 @@
         </div>
         <!-- /.row -->
 
-        <hr>
         <div class="row">
             <div class="heading-title">
+                <hr>
                 <h2>Cuenta Con Nosotros</h2>
                 <h3>Si tienes ideas, únetenos, coméntanosla y desarrollemos una <strong class="profile">Startup.</strong></h3>
+                <hr>
             </div>
         </div>
-        <hr>
+        
         <div class="row">
             <div class="col-sm-3">
                 <img class="img-circle img-responsive img-center" src="http://www.gravatar.com/avatar/a3b0a1e3249c3756a6760a518db36dbb?d=identicon&s=200&r=g" alt="">
@@ -63,8 +64,9 @@
             <div class="col-sm-3">
                 <img class="img-circle img-responsive img-center" src="http://www.gravatar.com/avatar/c06fed3cc76426014e5bf6f8b5f942dc?d=identicon&s=200&r=g" alt="">
                 <h3>Deyby Garcia Montes</h3>
-                <p><strong>Lider - Developer</strong><br>Estudiante de Ingenieria de Sistemas en la Universidad de Córdoba - Colombia.</p>
+                <p><strong>Lider - Developer</strong><br>Estudiante de Ingenieria de Sistemas en la Universidad de Córdoba - Colombia. {{ prueba }}</p>
             </div>
+
         </div>
-        <!-- /.row -->
+       
 {% endblock %}
