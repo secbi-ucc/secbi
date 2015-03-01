@@ -5,7 +5,7 @@
 {% block title %}{% trans "Notifications" %}{% endblock %}
 
 {% block content %}
-
+	<div class="container">
     <h1 class="headline">{% trans "Notifications" %}</h1>
 
     {% yt_paginator_autopaginate notifications as page %}
@@ -15,5 +15,5 @@
     </div>
 
     {% render_yt_paginator page %}
-
+    </div>
 {% endblock %}

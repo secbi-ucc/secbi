@@ -639,6 +639,12 @@ input[type="submit"].button,
     .side-menu li:last-child {
       border-bottom: rgba(255, 255, 255, 0.1) solid 1px; }
 
+      .dropdown-menu li{
+        display: block;
+        margin-left: 0;
+        margin: 0;
+      }
+
 /* IE9+ */
 #side-menu:target,
 .side-menu-show {
@@ -693,7 +699,7 @@ input[type="submit"].button,
 .header-tabs {
   float: right;
   line-height: 48px; }
-  .header-tabs li {
+  .header-tabs li .menu-header{
     margin-left: 24px; }
 
 .header-tab-link.is-selected {
