@@ -638,11 +638,13 @@ input[type="submit"].button,
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
     .side-menu li:last-child {
       border-bottom: rgba(255, 255, 255, 0.1) solid 1px; }
-
+      .dropdown-menu{
+        right: 0px;
+        left: auto;
+      }
       .dropdown-menu li{
         display: block;
         margin-left: 0;
-        margin: 0;
       }
 
 /* IE9+ */
