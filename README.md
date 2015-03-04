@@ -2,6 +2,8 @@
 
 ## Devhunter ![Coverage](https://img.shields.io/teamcity/coverage/bt1242.svg)
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/devhunterco)
+
 
 Esta app esta construida con Python utilizando Django como framework.
 
