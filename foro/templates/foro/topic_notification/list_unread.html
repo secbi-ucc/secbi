@@ -5,7 +5,7 @@
 {% block title %}{% trans "Unread notifications" %}{% endblock %}
 
 {% block content %}
-
+    <div class="container">
     <h1 class="headline">{% trans "Unread notifications" %}</h1>
 
     <div class="rows">
@@ -22,5 +22,5 @@
             <li><a class="paginator-button" href="?notif={{ next_page_pk }}">{% trans "Next" %} <i class="fa fa-chevron-right"></i></a></li>
         </ul>
     {% endif %}
-
+    </div>
 {% endblock %}
