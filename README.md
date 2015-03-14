@@ -27,7 +27,7 @@ Inicialmente se trabajara en un modulo que ponga a disposición todas las funcio
 ### Relase v0.2
 
 - [ ] Integración Auth con github
-- [ ] Modulo: chat real-time con Nodejs
+- [x] Modulo: chat real-time con Nodejs
 
 ### Relase v0.1
 
