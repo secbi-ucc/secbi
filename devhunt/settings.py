@@ -34,7 +34,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 INSTALLED_APPS += (
-    'landing',
     'feed',
     'django_gravatar',
 )
