@@ -24,8 +24,13 @@
                 <h1>Comunidad DevHunter</h1>
 
                 <p> DevHunter es un grupo de libre esparcimiento de ideas formando la comunidad de desarrolladores y emprendedores de Córdoba.</p>
+                {% if user.is_authenticated %}
+                <a style="background-color:#3CADD4; border: 1px solid transparent; padding:5px;" class="btn btn-primary btn-lg" href="/discusion/"> <i class="fa fa-child"></i> Participar</a>
+                <br><br>
+                {% else %}
                 <a style="background-color:#3CADD4; border: 1px solid transparent; padding:5px;" class="btn btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-child"></i> Participar</a>
                 <br><br>
+                {% endif %}
                 <a href="/equipo/">Conoce más</a>
             </div>
         </div>
