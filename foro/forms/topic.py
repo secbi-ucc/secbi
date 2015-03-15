@@ -26,7 +26,8 @@ class TopicForm(forms.ModelForm):
                                                          parent_field='parent_id',
                                                          label_field='title',
                                                          label=_("Category"),
-                                                         empty_label=_("Chose a category"))
+                                                         empty_label=_(" Elije una categoria"))
+        self.fields['title'].widget.attrs['placeholder'] = _(" Titulo")
 
         if self.instance.pk and not user.is_moderator:
             del self.fields['category']

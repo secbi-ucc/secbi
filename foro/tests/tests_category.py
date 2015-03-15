@@ -29,7 +29,7 @@ class CategoryViewTest(TestCase):
         """
         response = self.client.get(reverse('foro:category-list'))
         self.assertQuerysetEqual(response.context['categories'],
-                                 ['<Category: Uncategorized>', repr(self.category_1), repr(self.category_2)])
+                                 ['<Category: Sin categoria>', repr(self.category_1), repr(self.category_2)])
 
     def test_category_detail_view(self):
         """

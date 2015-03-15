@@ -17,9 +17,18 @@ class RegistrationForm(UserCreationForm):
 
     honeypot = forms.CharField(label=_("Leave blank"), required=False)
 
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Elije un nombre de usuario'}))
+
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Crea una contraseña'}))
+
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirma tu contraseña'}))
+
     class Meta:
         model = User
         fields = ("username", "email")
+        widgets = {
+            "email": forms.TextInput(attrs={'placeholder': 'Tu correo'})
+        }
 
     def clean_honeypot(self):
         """Check that nothing's been entered into the honeypot."""
@@ -55,7 +64,9 @@ class UserProfileForm(forms.ModelForm):
 
 class LoginForm(AuthenticationForm):
 
-    username = forms.CharField(label=_("Username or Email"), max_length=254)
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Tu usuario'}), max_length=254)
+
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Tu contraseña'}))
 
 
 class EmailChangeForm(forms.Form):

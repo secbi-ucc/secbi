@@ -2,27 +2,45 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Login" %}{% endblock %}
+{% block title %}Ingreso{% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div  style="width: 100%;  text-align: center;"class="container">
 
-    <h1 class="headline">{% trans "Login" %}</h1>
+<div style="text-align:center; background-color:white; display: inline-block;" class="row">
+
+
+    <h1 class="headline">Ingreso a Devhunter</h1>
 
     <div class="login">
         <form action="." method="post">
             {% csrf_token %}
-            {% include "foro/_form.html" %}
+            {{ form.non_field_errors }}
 
-            <input class="button" type="submit" name="post" value="{% trans "Login" %}" />
+{% for field in form.hidden_fields %}
+    {{ field.errors }}
+    {{ field }}
+{% endfor %}
+
+{% for field in form.visible_fields %}
+    <div class="field">
+
+        {{ field.errors }}
+        {{ field }}
+        {{ field.help_text }}
+            </div>
+{% endfor %}
+
+            <input class="button btn-green" type="submit" name="post" value="Ingresar" />
         </form>
     </div>
 
     <div class="login-links">
-		<a class="login-link" href="{% url "foro:user-register" %}">{% trans "Create an account" %}</a>
-		<a class="login-link" href="{% url "foro:password-reset" %}">{% trans "I don't know my password" %}</a>
+		<a class="login-link" href="{% url "foro:user-register" %}">Crear una cuenta</a>
+		<!--<a class="login-link" href="{% url "foro:password-reset" %}">No recuerdo mi contraseña</a>-->
         <a class="login-link" href="{% url "foro:resend-activation" %}">Reenviar correo de activación </a>
 	</div>
+</div>
 </div>
 {% endblock %}

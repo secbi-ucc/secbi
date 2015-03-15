@@ -32,11 +32,11 @@
 
          {% ifequal user.username p_user.username %}
         <div class="">
-            <a class="button" href="{% url "foro:profile-update" %}"><i class="fa fa-cog"></i> {% trans "Preferences" %}</a>
+            <a class="button" href="{% url "foro:profile-update" %}"><i class="fa fa-cog"></i> Preferencias </a>
         </div>
     {% else %}
         <div class="private-message">
-            <a class="button" href="{% url "foro:private-publish" user_id=p_user.pk %}"><i class="fa fa-envelope"></i> {% trans "Private Message" %}</a>
+            <a class="button" href="{% url "foro:private-publish" user_id=p_user.pk %}"><i class="fa fa-envelope"></i>Mensaje privado</a>
         </div>
     {% endifequal %}
 
@@ -70,8 +70,8 @@
 
 
     <ul class="tabs">
-		<li><a class="tab-link{% ifequal active_tab 0 %} is-selected{% endifequal %}" href="{% url "foro:profile-detail" pk=p_user.pk slug=p_user.slug %}" >{% trans "Comments" %}</a></li><!--
-	 --><li><a class="tab-link{% ifequal active_tab 1 %} is-selected{% endifequal %}" href="{% url "foro:profile-topics" pk=p_user.pk slug=p_user.slug %}" >{% trans "Topics" %}</a></li><!--
+		<li><a class="tab-link{% ifequal active_tab 0 %} is-selected{% endifequal %}" href="{% url "foro:profile-detail" pk=p_user.pk slug=p_user.slug %}" >Commentarios</a></li><!--
+	 --><li><a class="tab-link{% ifequal active_tab 1 %} is-selected{% endifequal %}" href="{% url "foro:profile-topics" pk=p_user.pk slug=p_user.slug %}" >Temas</a></li><!--
 	 --><li><a class="tab-link{% ifequal active_tab 2 %} is-selected{% endifequal %}" href="{% url "foro:profile-likes" pk=p_user.pk slug=p_user.slug %}" >{% trans "Likes" %}</a></li>
 	</ul>
 </div>

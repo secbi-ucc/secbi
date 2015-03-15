@@ -589,6 +589,10 @@ input[type="submit"].button,
   background-color:#3cadd4 !important;
   color:white !important;
 }
+
+.btn-green{
+  background-color:#81c784 !important; width:100% !important; color:white !important; height:40px !important;
+}
   input[type="submit"].button.is-undo,
   .button.is-undo {
     background-color: #c65555; }

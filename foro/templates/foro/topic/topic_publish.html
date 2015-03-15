@@ -2,7 +2,7 @@
 
 {% load foro_tags i18n %}
 
-{% block title %}{% trans "Publish topic" %}{% endblock %}
+{% block title %}Publicar un tema{% endblock %}
 
 {% block head-extra %}
     <script>
@@ -21,13 +21,22 @@
 	});
 
 	</script>
+
+    <style>
+        label{
+            display:none;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
 
-    <h1 class="headline">{% trans "Publish topic" %}</h1>
+<div  class="container">
+<div class="row">
+
+    <h1 class="headline"> <i class="fa fa-plus-square-o"></i>
+ Publicar un tema</h1>
 
     <form action="." method="post" class="js-reply">
         {% csrf_token %}
@@ -49,11 +58,13 @@
             {% include "foro/_form.html" with form=cform %}
         </div>
 
-        <div class="container">
+
             {% include "foro/comment/_editor.html" %}
 
-            <input class="button reply-button" type="submit" value="{% trans "Publish" %}" />
-        </div>
+            <input class="button reply-button btn-green" type="submit" value="Publicar" />
+
     </form>
 </div>
+</div>
+<br>
 {% endblock %}

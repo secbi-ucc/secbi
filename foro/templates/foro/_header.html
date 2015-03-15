@@ -17,16 +17,16 @@
                 <li style="margin-left: 24px;" class="menu-header dropdown">
                     <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">{{ user.username }} <i class="fa fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a class="menu-link" href="{% url "foro:profile-detail" pk=user.pk slug=user.slug %}">{% trans "Profile" %}</a></li>
-                             <li><a class="menu-link" href="{% url "foro:topic-active" %}">{% trans "Topics" %}</a></li>
-                                <li><a class="menu-link" href="{% url "foro:topic-unread-list" %}">{% trans "Unread topics" %}</a></li>
-                                <li><a class="menu-link" href="{% url "foro:private-list" %}">{% trans "Private topics" %}</a></li>
+                            <li><a class="menu-link" href="{% url "foro:profile-detail" pk=user.pk slug=user.slug %}">Mi perfil</a></li>
+                             <li><a class="menu-link" href="{% url "foro:topic-active" %}">Temas</a></li>
+                                <li><a class="menu-link" href="{% url "foro:topic-unread-list" %}">Temas sin leer</a></li>
+                                <li><a class="menu-link" href="{% url "foro:private-list" %}">Temas privados</a></li>
 
                                 {% if user.is_administrator %}
-                                    <li><a class="menu-link" href="{% url "foro:admin" %}">{% trans "Admin" %}</a></li>
+                                    <li><a class="menu-link" href="{% url "foro:admin" %}">Administrador</a></li>
                                 {% endif %}
 
-                                <li><a class="menu-link js-post" href="{% url "foro:user-logout" %}?next={% firstof request.get_full_path|urlencode '/' %}">{% trans "Log out" %}</a></li>
+                                <li><a class="menu-link js-post" href="{% url "foro:user-logout" %}?next={% firstof request.get_full_path|urlencode '/' %}">Salir</a></li>
                         </ul>
                 </li>
             </ul>

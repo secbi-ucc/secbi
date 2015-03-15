@@ -27,7 +27,7 @@ class CommentForm(forms.ModelForm):
         self.user = user
         self.topic = topic
         self.mentions = None  # {username: User, }
-        self.fields['comment'].widget.attrs['placeholder'] = _("Write comment...")
+        self.fields['comment'].widget.attrs['placeholder'] = _("Escribe un comentario...")
 
     def _get_comment_html(self):
         markdown = Markdown(escape=True, hard_wrap=True)

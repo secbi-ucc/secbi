@@ -17,7 +17,7 @@ def default_categories(apps, schema_editor):
 
     if not Category.objects.filter(pk=settings.ST_UNCATEGORIZED_CATEGORY_PK).exists():
         Category.objects.get_or_create(pk=settings.ST_UNCATEGORIZED_CATEGORY_PK,
-                                       title="Uncategorized",
+                                       title="Sin categoria",
                                        slug="uncategorized")
 
 

@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Register" %}{% endblock %}
+{% block title %}Registro{% endblock %}
 
 {% block head-extra %}
     <script>
@@ -19,18 +19,40 @@
 
 {% block content %}
 
-<div class="container">
+<div  style="width: 100%;  text-align: center;"class="container">
 
-    <h1 class="headline">Participar en la comunidad</h1>
+<div style="text-align:center; background-color:white; display: inline-block;" class="row">
 
+
+
+    <h1 class="headline">Registrarse en Devhunter </h1>
+    <br>
 
 
     <form action="." method="post">
         {% csrf_token %}
-        {% include "foro/_form.html" %}
+        {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
 
-        <input class="button" type="submit" name="post" value="{% trans "Registrar" %}" />
+{{ form.non_field_errors }}
+
+{% for field in form.hidden_fields %}
+    {{ field.errors }}
+    {{ field }}
+{% endfor %}
+
+{% for field in form.visible_fields %}
+    <div class="field">
+
+        {{ field.errors }}
+        {{ field }}
+        {{ field.help_text }}
+    </div>
+{% endfor %}
+
+        <input class="btn-green button" type="submit" name="post" value="Registro" />
     </form>
 </div>
 <br>
+
+</div>
 {% endblock %}

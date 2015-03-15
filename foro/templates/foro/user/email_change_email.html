@@ -1,10 +1,9 @@
 {% load i18n %}{% autoescape off %}
-{% blocktrans %}You're receiving this because you changed your user email at {{ site_name }}.{% endblocktrans %}
+{% blocktrans %}Hola, recibes este correo porque cambiaste tu correo en {{ site_name }}.{% endblocktrans %}
 
-{% trans "Please go to the following link to confirm your email change:" %}
+Ve al siguiente enlace para confirmar el cambio.
 
 {{ protocol }}://{{ domain }}{% url 'foro:email-change-confirm' token=token %}
 
-{% trans "Thanks for using our site!" %}
 
 {% endautoescape %}

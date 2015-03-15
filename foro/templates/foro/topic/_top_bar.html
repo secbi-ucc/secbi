@@ -8,7 +8,7 @@
             {% if category %}
 			    <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
 			{% else %}
-                <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">{% trans "All Categories" %} <i class="fa fa-chevron-down"></i></a>
+                <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">Todas las categorias <i class="fa fa-chevron-down"></i></a>
             {% endif %}
 
 			<div class="tab-content js-tab-content js-categories-content">
@@ -17,9 +17,9 @@
                         <li><a class="menu-link" href="{{ c.get_absolute_url }}" >{{ c.title }}</a></li>
                     {% endfor %}
                     {% if category.parent %}
-                        <li><a class="menu-link" href="{{ category.parent.get_absolute_url }}" >{% trans "All Subcategories" %}</a></li>
+                        <li><a class="menu-link" href="{{ category.parent.get_absolute_url }}" >Todas las subcategorias</a></li>
                     {% else %}
-                        <li><a class="menu-link" href="{% url "foro:topic-active" %}" >{% trans "All Categories" %}</a></li>
+                        <li><a class="menu-link" href="{% url "foro:topic-active" %}" >Todas las categorias</a></li>
                     {% endif %}
 				</ul>
 			</div>
@@ -27,9 +27,9 @@
 
         <div class="new-topic">
             {% if category %}
-                <a class="button button-primary" href="{% url "foro:topic-publish" category.pk %}"> <i class="fa fa-plus"></i> {% trans "Create Topic" %}</a>
+                <a class="button button-primary" href="{% url "foro:topic-publish" category.pk %}"> <i class="fa fa-plus"></i> Crear un tema</a>
             {% else %}
-                <a class="button button-primary" href="{% url "foro:topic-publish" %}"> <i class="fa fa-plus"></i> {% trans "Create Topic" %}</a>
+                <a class="button button-primary" href="{% url "foro:topic-publish" %}"> <i class="fa fa-plus"></i> Crear un tema</a>
             {% endif %}
 		</div>
 	</div>
