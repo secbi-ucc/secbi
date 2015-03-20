@@ -1,0 +1,10 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Nuevo Proyecto{% endblock %}
+
+{% block content %}
+{% csrf_token %} 
+{{form}}
+{% endblock %}
