@@ -10,12 +10,12 @@ from foro.utils.decorators import administrator_required
 @administrator_required
 def new_project(request):
 	if request.method == 'POST':
-		form = ProjectForm(data=request.POST)
+		form = ProjectForm(request.POST, request.FILES)
 
 		if form.is_valid():
 			project = form.save()
 
-			return redirect(reverse('feed:proyectos'))
+			
 
 	else:
 		form = ProjectForm()
