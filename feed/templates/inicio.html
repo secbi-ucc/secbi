@@ -7,86 +7,145 @@
 {% block content %}
  <!-- Page Content -->
 
-<style>
-  body {
-      background-color:#E9EAED;
-  }
-</style>
-
-    <div  class="container">
-
+    <div  class="container ">
         <!-- Heading-->
-        <div class="row">
-            <div style="padding-left: 4px; padding-right:10px;" class="col-md-8">
-                <img class="img-responsive img-rounded" src="{{STATIC_URL}}inicio/images/cover.jpg" alt="">
+        <div class="row  ">
+            <div style="padding-left: 4px; padding-right:10px;" class="col-md-3">
+                <img style="width:300px;" class="img-responsive img-rounded" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
             </div>
-            <div  class="col-md-4">
-                <h1>Comunidad DevHunter</h1>
+            <div  class="col-md-8">
+                <h1><strong>Bienvenido a la comunidad DevHunter !</strong></h1>
 
-                <p> DevHunter es un grupo de libre esparcimiento de ideas formando la comunidad de desarrolladores y emprendedores de Córdoba.</p>
+                <p> DevHunter es una comunidad de libre esparcimiento de ideas formando por desarrolladores y emprendedores de Córdoba, Colombia.</p>
+
+
+
                 {% if user.is_authenticated %}
-                <a style="background-color:#3CADD4; border: 1px solid transparent; padding:5px;" class="btn btn-primary btn-lg" href="/discusion/"> <i class="fa fa-child"></i> Participar</a>
+                <a style="background-color:#3CADD4;"  class="btn btn-primary btn-lg" href="/discusion/user/register/">  Participa ! </a>
                 <br><br>
                 {% else %}
-                <a style="background-color:#3CADD4; border: 1px solid transparent; padding:5px;" class="btn btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-child"></i> Participar</a>
-                <br><br>
+                <a style="background-color:#3CADD4;"  class="btn btn-primary btn-lg" href="/discusion/user/register/">  Únete ! </a> ó  <a href="/equipo/"> Conoce más</a>
                 {% endif %}
-                <a href="/equipo/">Conoce más</a>
+
             </div>
+        </div>
+
+            <div class="row">
+
+
+        <div class="col-md-3">
+
+
+
+               <div class="list-group">
+  <a href="#" class="list-group-item">
+    <i class="fa fa-map-marker"></i> Universidad de Córdoba</li>
+  </a>
+  <a href="#" class="list-group-item"><i class="fa fa-github"></i> Devhunterco </li>
+  </a>
+  <a href="#" class="list-group-item"><i class="fa fa-twitter"></i> @Devhunterco </li>
+  </a>
+</div>
+           <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+            <img class="avatar-list" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+
+
+            <ul class="numbers list-group">
+  <li class="list-group-item">
+    <span class="badge">34</span>
+    Miembros
+  </li>
+  <li class="list-group-item">
+    <span class="badge">1</span>
+    Eventos
+  </li>
+
+</ul>
+
+
+        </div>
+
+        <div class="col-md-6">
+
+        <h2><strong>Spin-offs recientes</strong></h2>
+        <hr>
+
+            <div class="event">
+                <h2><a class="event-title" href="">Git y Github: Trabajo colaborativo en el desarrollo web</a></h2>
+                <div class="meta">
+                    <a href=""><i class="fa fa-clock-o"></i>  20 Marzo 2015 3:30 PM</a>
+                    |
+                    <a href=""><i class="fa fa-file-code-o"></i> Documentación</a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ex fugiat ratione nostrum adipisci magnam hic, sapiente </p>
+
+            </div><div class="event">
+                <h2><a class="event-title" href="">Apps Days by Firefox en Monteria</a> <span style="font-size:10px;" class="label label-success">EVENTO</span></h2>
+                <div class="meta">
+                    <a href=""><i class="fa fa-clock-o"></i>  20 Marzo 2015 3:30 PM</a>
+                    |
+                    <a href=""><i class="fa fa-file-code-o"></i> Documentación</a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ex fugiat ratione nostrum adipisci magnam hic, sapiente </p>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+
+                <h2><strong>Feed</strong></h2>
+                <hr>
+
+                <div class="feed-item">
+                     <img class="feed-avatar" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+                    <span class="feed-title"> <i class="fa fa-user"></i> Nuevo miembro </span>
+                    <p><a href="">Juanito Carlos</a> se unio.</p>
+
+                </div>
+
+
+          <div class="feed-item">
+                    <span class="feed-title"> <i class="fa fa-camera-retro"></i> Nueva foto </span>
+                     <img class="feed-img" src="http://static.bigstockphoto.com/images/landing/1/growingCollection.png" alt="">
+                     <p><a href="">Juanito Carlos</a> agrego una foto al evento <a href="">Rock & Roll.</a></p>
+
+
+                </div>
+
+
+
+                <div class="feed-item">
+                     <img class="feed-avatar" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+                    <span class="feed-title"> <i class="fa fa-comment-o"></i> Nuevo comentario </span>
+                    <p><a href="">Juanito Carlos</a> comento en el tema <a href="">Mi madre me pega.</a></p>
+
+                </div>
+<div class="feed-item">
+                     <img class="feed-avatar" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
+                    <span class="feed-title"> <i class="fa fa-comment-o"></i> Nuevo comentario </span>
+                    <p><a href="">Juanito Carlos</a> comento en el tema <a href="">Mi madre me pega.</a></p>
+
+                </div>
+
         </div>
     </div>
-         <!-- Contenido de Pagina -->
-    <div class="container ">
 
+     <div class="row">
+            <div style="padding-left: 4px; padding-right:4px; text-align:center;" class="col-md-12">
+               <h2><strong>Ellos nos apoyan</strong></h2>
 
-        <div class="row">
-            <div  style="padding-left: 4px; padding-right:4px;" class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Info general</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p align="justify"> DevHunter es una iniciativa para fomentar el desarrollo tecnologico. Creando una comunidad y un grupo libre; en donde se compartan ideas y conocimientos para formar <strong>Desarrolladores</strong> y <strong>Emprendedores</strong>. </p>
-                    </div>
-                </div>
-            </div>
-            <div style="padding-left: 4px; padding-right:4px;" class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4> Encuentros</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p align="justify">
-                            Nos reunimos en la universidad de Córdoba (Bloque 12 sala de sistemas) Todos los sabados a partir de las 2 Pm hasta las 5 Pm
-                            <br> <center><strong>Te Esperamos!</strong></center>   
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            <div style="padding-left: 4px; padding-right:4px;" class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4> Actividad reciente</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p align="justify" >
-                            Organizadores del evento AppDays de Mozilla Proximamente en la universidad de córdoba. <br>
-                            Capacitaciones a los integrantes de la comunidad sobre <strong>GITHUB, HTML5, CSS, BOOTSTRAP, PYTHON-DJANGO</strong>.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div style="padding-left: 4px; padding-right:4px;" class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Ellos Nos Apoyan</h4>
-                    </div>
-                    <div class="panel-body">
+                <div>
+                    <div >
                         <center>
                         <a href="http://brujulab.co"><img src="{{STATIC_URL}}inicio/images/brujulab.png"></a>
                         <a href="http://caribemesh.org"><img src="{{STATIC_URL}}inicio/images/caribemesh_logo.png"></a>
@@ -98,6 +157,12 @@
         </div>
 
     </div>
+
+
+    </div>
+    <br>
+
+
 
 
 

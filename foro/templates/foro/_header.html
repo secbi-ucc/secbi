@@ -2,10 +2,10 @@
 
     <header class="header-gray header js-tabs-container">
 
-    <div class="container">
+  <div class="container">
 
     <a style="" class="header-logo" href="/">
-        <img style="width:200px;" src="{{STATIC_URL}}inicio/images/DevHunter-Logo-300.png" alt="">
+        <img style="width:200px;" src="{{STATIC_URL}}inicio/images/DevHunter-Logo-300-o.png" alt="">
     </a>
 
         {% if user.is_authenticated %}
@@ -42,7 +42,7 @@
         {% else %}
 
             <a class="header-link" href="{% url "foro:user-register" %}?next={% firstof request.get_full_path|urlencode '/' %}"> Registrate</a>
-            <span class="header-link" style="color:white">&nbsp; ó &nbsp;</span>
+            <span class="header-link">&nbsp; ó &nbsp;</span>
             <a class="header-link" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa <a>
 
         {% endif %}
@@ -54,12 +54,14 @@
     <div class="nav-fixed nav">
         <div class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion  <span class="badge">3</span></a></li>
         <li><a class="nav-link" href="https://trello.com/b/vbgSpQZs/tareas-devhunter">Agenda</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/proyectos/" %} nav-link-active {% endif %}" href="/proyectos">Proyectos</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="/equipo">Equipo</a></li>
         </div>
     </div>
+
+
 
 
     <a href="https://gitter.im/devhunterco" class="fixed-chat"> <i style="color:#558b2f; font-size:10px;" class="fa fa-circle"></i> <strong>Chat grupal</strong>

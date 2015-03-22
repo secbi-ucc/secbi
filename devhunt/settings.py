@@ -40,7 +40,6 @@ INSTALLED_APPS += (
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-
 """
 Configuraciones para trabajar en local y en produccion
 
