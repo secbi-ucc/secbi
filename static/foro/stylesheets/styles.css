@@ -553,7 +553,7 @@ h2 {
 
 .list-group-item{
   border:0px;
-  border-top: 1px solid #DDD !important;
+  border-bottom: 1px solid #DDD !important;
 }
 .numbers{
   margin-top:10px;
@@ -796,7 +796,7 @@ input[type="submit"].button,
   border: 1px solid #CECECE;
   margin-right:8px;
   padding:10px;
-  width:150px;
+  width:80px;
   right:0;
   z-index:1000;
 }

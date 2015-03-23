@@ -10,4 +10,5 @@ urlpatterns = patterns('',
                        url(r'^equipo/', 'feed.views.base.sobre', name='sobre'),
                        url(r'^proyectos/', 'feed.views.base.proyectos', name='proyectos'),
                        url(r'^nuevoproyecto/', 'feed.views.projects.new_project', name='new_project'),
+                       url(r'^agenda/', 'feed.views.base.agenda', name='agenda'),
                        )
