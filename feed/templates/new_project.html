@@ -5,9 +5,12 @@
 {% block title %}Nuevo Proyecto{% endblock %}
 
 {% block content %}
-<form enctype='multipart/form-data' action="" method="post">
-{% csrf_token %}
-{{form}}
-<input type="submit" value="Guardar">
-</form>
+<div class="container">
+	<h1 class="headline">Publicar un Proyecto</h1>
+	<form enctype='multipart/form-data' action="" method="post">
+	{% csrf_token %}
+	{{form}}
+	<input type="submit" value="Guardar">
+	</form>
+</div>
 {% endblock %}

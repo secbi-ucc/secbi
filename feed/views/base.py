@@ -12,11 +12,6 @@ def sobre(request):
     return render(request, 'sobre.html', {'miembros': miembros})
 
 
-def proyectos(request):
-
-    return render(request, 'proyectos.html')
-
-
 def agenda(request):
 
     return render(request, 'agenda.html')
