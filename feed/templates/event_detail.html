@@ -19,7 +19,7 @@
                     </a>
                 </div>
                 {% for miembro in miembros_email %}
-                <img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt="">
+                <a href="discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
                 {% empty %}
                 <p>No hay miembros</p>
                 {% endfor %}
