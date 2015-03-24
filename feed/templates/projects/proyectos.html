@@ -27,14 +27,12 @@
         {% for proyecto in proyectos %}
             <div class="row">
             <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="{{MEDIA_URL}}{{proyecto.cover}}" alt="">
-                </a>
+                    <img class="img-responsive header-project" src="{{MEDIA_URL}}{{proyecto.cover}}" alt="">
             </div>
             <div class="col-md-5">
                 <h3><strong>{{proyecto.title}}</strong></h3>
                 <p>{{proyecto.description_short}}</p>
-                
+                <a class="btn-primary btn-lg" href={% url "feed:ver_project" proyecto.id %}><i class="fa fa-arrow-circle-right"></i>&nbsp;Ver Proyecto</a>
             </div>
         </div>
         <hr>
