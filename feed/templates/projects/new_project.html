@@ -10,7 +10,8 @@
 	<form enctype='multipart/form-data' action="" method="post">
 	{% csrf_token %}
 	{{form}}
-	<input type="submit" value="Guardar">
+	<br>
+	<input class="button reply-button btn-green" type="submit" value="Guardar"></input>
 	</form>
 </div>
 {% endblock %}

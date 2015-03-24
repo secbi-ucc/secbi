@@ -1393,3 +1393,7 @@ div.container {
   .heading-title h3{
     font-style: italic;
   }
+
+.header-project{
+  border-radius: 0.8em;
+}
