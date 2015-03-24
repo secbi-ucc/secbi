@@ -13,10 +13,10 @@ class ProjectForm(forms.ModelForm):
         fields = ('title', 'description_short', 'description', 'cover')
 
     def clean_cover(self):
-    	image = self.cleaned_data.get('cover',False)
-    	if image:
+        image = self.cleaned_data.get('cover', False)
+        if image:
             img = Image.open(image)
             width, height = img.size
             if height != 300 and width != 700:
-    			raise forms.ValidationError("Las dimensiones de la imagen deben ser 700x300 ")
+                raise forms.ValidationError("Las dimensiones de la imagen deben ser 700x300 ")
         return image

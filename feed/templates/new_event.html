@@ -1,0 +1,16 @@
+{% extends "foro/_base.html" %}
+
+{% load i18n %}
+
+{% block title %}Nuevo evento{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="headline">Publicar un evento</h1>
+  <form enctype='multipart/form-data' action="" method="post">
+  {% csrf_token %}
+  {{form}}
+  <input type="submit" value="Guardar">
+  </form>
+</div>
+{% endblock %}

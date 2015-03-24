@@ -12,7 +12,7 @@
             {% has_topic_notifications user as has_notifications %}
 
             <ul class="header-tabs">
-                <li class="menu-header"><a class="header-tab-link js-tab" href="{% url "foro:search" %}" data-related=".js-search-content"><i class="fa fa-search"></i></a></li>
+                <!--<li class="menu-header"><a class="header-tab-link js-tab" href="{% url "foro:search" %}" data-related=".js-search-content"><i class="fa fa-search"></i></a></li>-->
                 <li style="margin-left: 24px;" class="menu-header"><a class="header-tab-link js-tab-notification{% if has_notifications %} is-highlighted{% endif %}" href="{% url "foro:topic-notification-list" %}" data-related=".js-notifications-content"><i class="fa fa-bell"></i></a></li>
                 <li style="margin-left: 24px;" class="menu-header dropdown">
                     <a class="dropdown-toggle header-tab-link" data-toggle="dropdown" href="#">{{ user.username }} <i class="fa fa-chevron-down"></i></a>
@@ -54,9 +54,9 @@
     <div class="nav-fixed nav">
         <div class="container">
         <li><a class="nav-link {% if request.get_full_path = "/" %} nav-link-active {% endif %}  " href="/">Inicio</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion  <span class="badge">3</span></a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/discusion/" %} nav-link-active {% endif %} " href="/discusion">Discusion </a></li>
         <li><a class="nav-link {% if request.get_full_path = "/proyectos/" %} nav-link-active {% endif %}" href="/proyectos">Proyectos</a></li>
-        <li><a class="nav-link {% if request.get_full_path = "/docs/" %} nav-link-active {% endif %}" href="/proyectos">Docs</a></li>
+        <li><a class="nav-link {% if request.get_full_path = "/docs/" %} nav-link-active {% endif %}" href="http://docs.devhunter.co">Docs</a></li>
         <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="/equipo">Equipo</a></li>
         </div>
     </div>

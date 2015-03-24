@@ -14,7 +14,7 @@ def new_project(request):
         form = ProjectForm(request.POST, request.FILES)
 
         if form.is_valid():
-            project = form.save()
+            form.save()
 
     else:
         form = ProjectForm()
@@ -22,5 +22,5 @@ def new_project(request):
 
 
 def proyectos(request):
-	proyectos = Project.objects.all()
-	return render(request, 'proyectos.html', {"proyectos":proyectos,})
+    proyectos = Project.objects.all()
+    return render(request, 'proyectos.html', {"proyectos": proyectos})

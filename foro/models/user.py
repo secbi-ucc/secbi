@@ -32,6 +32,7 @@ class AbstractForumUser(models.Model):
     company = models.CharField(_("Universidad/Empresa"), max_length=80, null=True, blank=True)
     is_moderator = models.BooleanField(_('moderator status'), default=False)
     # is_verified = models.BooleanField(_('verified'), default=False)
+    es_destacado = models.BooleanField(_('Destacado'), default=False)
 
     topic_count = models.PositiveIntegerField(_("topic count"), default=0)
     comment_count = models.PositiveIntegerField(_("comment count"), default=0)

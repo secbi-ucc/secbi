@@ -1,13 +1,12 @@
 {% extends "foro/_base.html" %}
-{% block title %} Comunidad {% endblock %}
+{% block title %} {{event.title}} {% endblock %}
 {% load foro_tags i18n %}
 
-{% block content %}
-<div class="container ">
-{% include "jumbotron.html" %}
 
+{% block content%}
+<div class="container">
 
-        <div class="row">
+          <div class="row">
             <!-- General info -->
             <div class="col-md-3">
                <div class="list-group">
@@ -37,32 +36,42 @@
                 </ul>
             </div>
 
-<!-- Eventos -->
+            <!-- Eventos -->
   <div class="col-md-6">
-      <h2><strong>Reuniones y eventos</strong></h2>
-        <hr>
-        {% for event in events%}
-        <div class="event">
-          <h2><a class="event-title" href="evento/{{event.id}}">{{event.title}}</a></h2>
-              <div class="meta">
-                  <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
-                  |
-                  <a href=""><i class="fa fa-file-code-o"></i> {{event.lugar}}</a>
-              </div>
-              <p>{{event.description_short}} </p>
-        </div>
-        {% endfor %}
+      <h1><strong>{{event.title}}</strong></h1>
+      <span>{{event.due_date}}</span><br>
+      <span><a href="">{{event.lugar}}</a></span>
+      <br>
+       <hr>
+      <p>{{event.post_text}}</p>
+
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'devhunterco';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
   </div>
 
 
 
             {% include "recent_activity.html" %}
-
             {% include "sponsors.html" %}
 
 
 
-
+</div>
 
 
 {% endblock %}
