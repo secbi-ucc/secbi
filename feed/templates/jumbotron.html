@@ -7,10 +7,10 @@
                 <h1><strong>Bienvenido a la comunidad DevHunter !</strong></h1>
                 <p> DevHunter es una comunidad de libre esparcimiento de ideas y conocimiento en software y hardware libre formando por desarrolladores y emprendedores de Córdoba, Colombia.</p>
                 {% if user.is_authenticated %}
-                <a style="background-color:#3CADD4;"  class="btn btn-primary btn-lg" href="/discusion/">  Participa ! </a>
+                <a class="btn-primary btn-lg" href="/discusion/"><i class="fa fa-pencil"></i>&nbsp;Participa! </a>
                 <br><br>
                 {% else %}
-                <p>  <a style="background-color:#3CADD4;"  class="btn btn-primary btn-lg" href="/discusion/user/register/">  Únete ! </a>
+                <p><a class="btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-users"></i>&nbsp;Únete!</a>&nbsp;o&nbsp;<a href="/equipo/"> Conoce más</a></p>
 
                 {% endif %}
             </div>
