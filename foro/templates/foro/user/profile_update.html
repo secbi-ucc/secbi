@@ -2,20 +2,20 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Preferences" %}{% endblock %}
+{% block title %}Preferencias{% endblock %}
 
 {% block content %}
 
 <div class="container">
 
-    <h1 class="headline">{% trans "Preferences" %}</h1>
+    <h1 class="headline">Preferencias</h1>
 
     <dl class="preference">
 	   <dt class="preference-label">{% trans "Email" %}:</dt>
 	   <dd class="preference-desc"><a href="{% url "foro:profile-email-change" %}"><i class="fa fa-pencil"></i> {{ user.email }}</a></dd>
 
-	   <dt class="preference-label">{% trans "Password" %}:</dt>
-	   <dd class="preference-desc"><a href="{% url "foro:profile-password-change" %}"><i class="fa fa-pencil"></i> {% trans "Change password" %}</a></dd>
+	   <dt class="preference-label">Contraseña:</dt>
+	   <dd class="preference-desc"><a href="{% url "foro:profile-password-change" %}"><i class="fa fa-pencil"></i> Cambiar contraseña</a></dd>
 
 	   <dt class="preference-label">{% trans "Avatar" %}:</dt>
 	   <dd class="preference-desc"><a href="https://gravatar.com"><i class="fa fa-pencil"></i> {% trans "Change avatar" %}</a>
@@ -26,7 +26,7 @@
         {% csrf_token %}
         {% include "foro/_form.html" %}
 
-        <input class="button" type="submit" name="post" value="{% trans "Save" %}" />
+        <input class="button" type="submit" name="post" value="Guardar />
     </form>
 </div>
 {% endblock %}

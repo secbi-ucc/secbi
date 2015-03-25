@@ -68,7 +68,7 @@ def register(request):
         if not request.is_limited and form.is_valid():
             user = form.save()
             send_activation_email(request, user)
-            messages.info(request, _("We have sent you an email so you can activate your account!"))
+            messages.info(request, _("Te hemos enviado un correo electrónico para que pueda activar su cuenta!!"))
 
             # TODO: email-less activation
             # if not settings.REGISTER_EMAIL_ACTIVATION_REQUIRED:
@@ -89,7 +89,7 @@ def registration_activation(request, pk, token):
     if activation.is_valid(user, token):
         user.is_active = True
         user.save()
-        messages.info(request, _("Your account has been activated!"))
+        messages.info(request, _("Tu cuenta ha sido activada!"))
 
     return redirect(reverse('foro:user-login'))
 
@@ -106,8 +106,8 @@ def resend_activation_email(request):
             user = form.get_user()
             send_activation_email(request, user)
 
-        messages.info(request, _("If you don't receive an email, please make sure you've entered "
-                                 "the address you registered with, and check your spam folder."))
+        messages.info(request, _("Si usted no recibe un correo electrónico, por favor asegúrese de que ha introducido"
+                                 "la dirección que se registró, y comprobar su carpeta de correo no deseado."))
         return redirect(reverse('foro:user-login'))
     else:
         form = ResendActivationForm()
@@ -122,7 +122,7 @@ def profile_update(request):
 
         if form.is_valid():
             form.save()
-            messages.info(request, _("Your profile has been updated!"))
+            messages.info(request, _("Tu pefil se actualizo!"))
             return redirect(reverse('foro:profile-update'))
     else:
         form = UserProfileForm(instance=request.user)
@@ -137,7 +137,7 @@ def profile_password_change(request):
 
         if form.is_valid():
             form.save()
-            messages.info(request, _("Your password has been changed!"))
+            messages.info(request, _("Tu contrasena fue cambiada!"))
             return redirect(reverse('foro:profile-update'))
     else:
         form = PasswordChangeForm(user=request.user)
@@ -152,7 +152,7 @@ def profile_email_change(request):
 
         if form.is_valid():
             send_email_change_email(request, request.user, form.get_email())
-            messages.info(request, _("We have sent you an email so you can confirm the change!"))
+            messages.info(request, _("Te hemos enviado un email para que confirmes los cambios!"))
             return redirect(reverse('foro:profile-update'))
     else:
         form = EmailChangeForm()
@@ -168,7 +168,7 @@ def email_change_confirm(request, token):
     if email_change.is_valid(user, token):
         user.email = email_change.get_email()
         user.save()
-        messages.info(request, _("Your email has been changed!"))
+        messages.info(request, _("Tu email se cambio!"))
 
     return redirect(reverse('foro:profile-update'))
 
