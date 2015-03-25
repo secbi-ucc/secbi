@@ -2,37 +2,37 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Dashboard" %}{% endblock %}
+{% block title %}Panel de control{% endblock %}
 
 {% block content %}
 	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="dashboard" %}
 
-    <h1 class="headline">{% trans "Dashboard" %}</h1>
+    <h1 class="headline">Panel de control</h1>
 
     <div class="messages-info">
 		<div class="message-title is-info">{% trans "Software" %}</div>
 
 		<ul class="inline-list">
-			<li>{% trans "Installed" %}: {{ version }}</li><!--
-		 --><li>{% trans "Latest" %}: ??</li>
+			<li>Devhunt: {{ version }}</li><!--
+		 --><li>
 		</ul>
 	</div>
 
-    <h2 class="headline">{% trans "Statistics" %}</h2>
+    <h2 class="headline">Estadisticas</h2>
 
 	<div>
 
 		<div class="statistics-box">
-			<div class="statistics-title">{% trans "Members" %}</div>
+			<div class="statistics-title">Miembros</div>
 			<div class="statistics-count">{{ users_count }}</div>
 		</div>
 		<div class="statistics-box">
-			<div class="statistics-title">{% trans "Topics" %}</div>
+			<div class="statistics-title">Temas</div>
 			<div class="statistics-count">{{ topics_count }}</div>
 		</div>
 		<div class="statistics-box">
-			<div class="statistics-title">{% trans "Comments" %}</div>
+			<div class="statistics-title">Comentarios</div>
 			<div class="statistics-count">{{ comments_count }}</div>
 		</div>
 		<div class="statistics-box">
@@ -40,11 +40,11 @@
 			<div class="statistics-count">{{ likes_count }}</div>
 		</div>
 		<div class="statistics-box">
-			<div class="statistics-title">{% trans "Flags" %}</div>
+			<div class="statistics-title">Flags</div>
 			<div class="statistics-count">{{ flags_count }}</div>
 		</div>
 		<div class="statistics-box">
-			<div class="statistics-title">{% trans "Categories" %}</div>
+			<div class="statistics-title">Categorias</div>
 			<div class="statistics-count">{{ category_count }}</div>
 		</div>
 

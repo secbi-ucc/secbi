@@ -8,7 +8,7 @@
 
     {% for u in page %}
         <div class="row">
-            <a href="{{ u.get_absolute_url }}">{{ u.username }}</a> <a class="row-edit" href="{% url "foro:admin-user-edit" user_id=u.pk %}"><i class="fa fa-cog"></i> {% trans "edit" %}</a>
+            <a href="{{ u.get_absolute_url }}">{{ u.username }}</a> <a class="row-edit" href="{% url "foro:admin-user-edit" user_id=u.pk %}"><i class="fa fa-cog"></i> editar</a>
         </div>
     {% endfor %}
 

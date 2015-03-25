@@ -1,16 +1,16 @@
 {% load i18n %}
 
-<a class="button" href="#side-menu"><i class="fa fa-bars"></i> {% trans "Show menu" %}</a>
+<a class="button" href="#side-menu"><i class="fa fa-bars"></i> Mostrar menu</a>
 
 <div id="side-menu" class="side-menu">
     <a class="side-menu-close" href="#"><i class="fa fa-times-circle-o"></i></a>
 
 	<ul>
-        <li><a class="side-menu-link{% ifequal active "dashboard" %} is-selected{% endifequal %}" href="{% url "foro:admin" %}">{% trans "Dashboard" %}</a></li><!--
-	 --><li><a class="side-menu-link{% ifequal active "basic_settings" %} is-selected{% endifequal %}" href="{% url "foro:admin-config-basic" %}">{% trans "Basic settings" %}</a></li><!--
-	 --><li><a class="side-menu-link{% ifequal active "categories" %} is-selected{% endifequal %}" href="{% url "foro:admin-category" %}">{% trans "Categories" %}</a></li><!--
-	 --><li><a class="side-menu-link{% ifequal active "topics" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic" %}">{% trans "Topics" %}</a></li><!--
-	 --><li><a class="side-menu-link{% ifequal active "users" %} is-selected{% endifequal %}" href="{% url "foro:admin-user" %}">{% trans "Users" %}</a></li><!--
+        <li><a class="side-menu-link{% ifequal active "dashboard" %} is-selected{% endifequal %}" href="{% url "foro:admin" %}">Panel de control</a></li><!--
+	<li><a class="side-menu-link{% ifequal active "basic_settings" %} is-selected{% endifequal %}" href="{% url "foro:admin-config-basic" %}">{% trans "Basic settings" %}</a></li> --> <!--
+	 --><li><a class="side-menu-link{% ifequal active "categories" %} is-selected{% endifequal %}" href="{% url "foro:admin-category" %}">Categorias</a></li><!--
+	 --><li><a class="side-menu-link{% ifequal active "topics" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic" %}">Temas</a></li><!--
+	 --><li><a class="side-menu-link{% ifequal active "users" %} is-selected{% endifequal %}" href="{% url "foro:admin-user" %}">Usuarios</a></li><!--
 	 --><li><a class="side-menu-link{% ifequal active "flags" %} is-selected{% endifequal %}" href="{% url "foro:admin-flag" %}">{% trans "Flags" %}</a></li>
 	</ul>
 </div>

@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Open flags" %}{% endblock %}
+{% block title %}Flags abiertos{% endblock %}
 
 {% block content %}
 	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="flags" %}
 
-    <h1 class="headline">{% trans "Open flags" %}</h1>
+    <h1 class="headline">Flags abiertos</h1>
 
     {% include "foro/admin/comment_flag/_flag_list.html" with active_tab="open" %}
     </div>

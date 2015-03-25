@@ -15,7 +15,7 @@
 
     {% if flag.moderator %}
         <dl class="preference">
-           <dt class="preference-label">{% trans "Moderated by" %}:</dt>
+           <dt class="preference-label">Moderado por:</dt>
            <dd class="preference-desc"><a href="{{ flag.moderator.get_absolute_url }}">{{ flag.moderator.username }}</a></dd>
         </dl>
     {% endif %}
@@ -27,7 +27,7 @@
         <input class="button" type="submit" name="post" value="{% trans "Save" %}" />
     </form>
 
-    <h2 class="headline">{% trans "Comment flagged" %}</h2>
+    <h2 class="headline">Comentario moderado</h2>
 
 		<div class="comments">
 
@@ -51,14 +51,14 @@
                 </div>
 
 				<ul class="comment-actions">
-					<li><a href="#">{% trans "delete" %}</a></li>
+					<li><a href="#">Eliminar</a></li>
 				</ul>
             </div>
 
 		</div>
 
 
-    <h2 class="headline">{% trans "Reporters" %}</h2>
+    <h2 class="headline">Reporteros</h2>
 
     {% for f in flags %}
 		<div class="comments">

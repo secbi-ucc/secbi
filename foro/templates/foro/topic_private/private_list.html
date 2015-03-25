@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Private topics" %}{% endblock %}
+{% block title %}Temas privados{% endblock %}
 
 {% block content %}
 
 <div class="container">
 <br>
-
+    <h1 class="headline">Temas privados</h1>
     {% include "foro/topic_private/_top_bar.html" with active="participating" %}
 
     {% include "foro/topic/_render_page_list.html" %}

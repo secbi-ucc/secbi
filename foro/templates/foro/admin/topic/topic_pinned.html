@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Pinned topics" %}{% endblock %}
+{% block title %}Temas marcados{% endblock %}
 
 {% block content %}
 	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="topics" %}
 
-    <h1 class="headline">{% trans "Pinned topics" %}</h1>
+    <h1 class="headline">Temas marcados</h1>
 
     {% include "foro/admin/topic/_tabs.html" with active_tab="pinned" %}
 

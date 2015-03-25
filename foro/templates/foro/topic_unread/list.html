@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Unread topics replies" %}{% endblock %}
+{% block title %}Respuestas sin leer{% endblock %}
 
 {% block content %}
 
 <div class="container">
 
-    <h1 class="headline">{% trans "Unread topics replies" %}</h1>
+    <h1 class="headline">Respuestas sin leer</h1>
 
     {% include "foro/topic/_render_list.html" with topics=page %}
 

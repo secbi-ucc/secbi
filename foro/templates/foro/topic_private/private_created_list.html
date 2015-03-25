@@ -2,7 +2,7 @@
 
 {% load foro_tags i18n %}
 
-{% block title %}{% trans "Created private topics" %}{% endblock %}
+{% block title %}Crear un tema privado{% endblock %}
 
 {% block content %}
 
@@ -17,7 +17,7 @@
                 <a href="{% url "foro:private-join" topic_id=t.pk %}">{{ t.title }}</a> <a class="row-edit js-post" href="{% url "foro:private-join" topic_id=t.pk %}"><i class="fa fa-users"></i> {% trans "join" %}</a>
             </div>
         {% empty %}
-            <p>{% trans "There are no topics here, yet" %}</p>
+            <p>Aún no hay temas aqui.</p>
         {% endfor %}
 
     </div>

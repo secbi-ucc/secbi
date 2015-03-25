@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Unactive Users" %}{% endblock %}
+{% block title %}Usuarios inactivos{% endblock %}
 
 {% block content %}
 	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="users" %}
 
-    <h1 class="headline">{% trans "Unactive Users" %}</h1>
+    <h1 class="headline">Usuarios inactivos</h1>
 
     {% include "foro/admin/user/_user_list.html" with active_tab="unactive" %}
     </div>

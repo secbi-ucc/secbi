@@ -2,12 +2,12 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Join topic" %}{% endblock %}
+{% block title %}Unirse a tema{% endblock %}
 
 {% block content %}
 
     <h1 class="headline">
-        {% blocktrans with topic_title=topic.title %}Do you want to join {{ topic_title }}?{% endblocktrans %}
+        {% blocktrans with topic_title=topic.title %}Te gustaria unirte a {{ topic_title }}?{% endblocktrans %}
     </h1>
 
     <form action="." method="post">

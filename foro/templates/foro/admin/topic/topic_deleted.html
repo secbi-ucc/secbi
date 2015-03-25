@@ -2,13 +2,13 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Deleted Topics" %}{% endblock %}
+{% block title %}Temas eliminados{% endblock %}
 
 {% block content %}
 	<div class="container">
     {% include "foro/admin/_side_menu.html" with active="topics" %}
 
-    <h1 class="headline">{% trans "Deleted topics" %}</h1>
+    <h1 class="headline">Temas eliminados</h1>
 
     {% include "foro/admin/topic/_tabs.html" with active_tab="deleted" %}
 

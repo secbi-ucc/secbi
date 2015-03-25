@@ -2,11 +2,11 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Moderate comment" %}{% endblock %}
+{% block title %}Moderar comentario{% endblock %}
 
 {% block content %}
 
-    <h1 class="headline">{% trans "Moderate comment" %}</h1>
+    <h1 class="headline">Moderar comentario</h1>
 
     <form action="." method="post">
         {% csrf_token %}

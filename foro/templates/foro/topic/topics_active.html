@@ -5,9 +5,11 @@
 {% block title %}Comunidad{% endblock %}
 
 {% block content %}
-
+    <div class="container">
+    <br>
+    <br>
     {% include "foro/topic/_top_bar.html" with category=None categories=categories %}
-
+    <br>
     {% include "foro/topic/_render_page_list.html" %}
-
+    </div>
 {% endblock %}

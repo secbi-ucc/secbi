@@ -10,7 +10,7 @@
     {% paginator_autopaginate comments per_page=COMMENTS_PER_PAGE as page %}
         <div class="container">
         <ul class="nav">
-            <li><a href="{% url "foro:private-list" %}" >{% trans "Private topics" %}</a></li>
+            <li><a href="{% url "foro:private-list" %}" >Temas privados</a></li>
         </ul>
 
         <h1 class="headline">{{ topic.title }}</h1>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="private-leave">
-                <a class="button" href="{% url "foro:private-access-remove" topic_private.pk %}" ><i class="fa fa-times"></i>{% trans "Leave topic" %}</a>
+                <a class="button" href="{% url "foro:private-access-remove" topic_private.pk %}" ><i class="fa fa-times"></i>Dejar tema</a>
             </div>
         </div>
 

@@ -543,6 +543,10 @@ h2 {
 
 }
 
+.right-icon{
+  float:right;
+}
+
 .event-title{
   color:#3CADD4;
 }
@@ -725,7 +729,7 @@ input[type="submit"].button,
 }
 
 .header-gray{
-  background-color:white;
+  background-color:#FAFAFA;
   padding-top:5px;
   padding-bottom:5px;
 
@@ -892,7 +896,7 @@ input[type="submit"].button,
   float: right; }
 
 .categories {
-  float: left;
+
   display: block;
   margin-right: 7.42297%;
   width: 100%;
@@ -901,7 +905,6 @@ input[type="submit"].button,
     margin-right: 0; }
   @media screen and (min-width: 768px) {
     .categories {
-      float: left;
       display: block;
       margin-right: 3.57866%;
       width: 48.21067%; }
@@ -1004,6 +1007,7 @@ input.move-comment-checkbox {
 
 .nav-link-active{
   border-bottom: 3px solid #3cadd4;
+  border-top: 1px solid #e4e2e2;
   text-decoration: none;
   background-color: #eee;
 }

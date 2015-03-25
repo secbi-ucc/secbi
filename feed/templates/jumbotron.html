@@ -1,24 +1,11 @@
 <!-- Heading-->
     <div class="row">
-        <div class="col-md-3">
-                <img style="width:300px;" class="img-responsive img-rounded" src="{{STATIC_URL}}inicio/images/logo.png" alt="">
-            </div>
-            <div  class="col-md-8">
-                <h1><strong>Bienvenido a la comunidad DevHunter !</strong></h1>
-                <p> DevHunter es una comunidad de libre esparcimiento de ideas y conocimiento en software y hardware libre formando por desarrolladores y emprendedores de Córdoba, Colombia.</p>
-                {% if user.is_authenticated %}
-                <a class="btn-primary btn-lg" href="/discusion/"><i class="fa fa-pencil"></i>&nbsp;Participa! </a>
-                <br><br>
-                {% else %}
-                <p><a class="btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-users"></i>&nbsp;Únete!</a>&nbsp;o&nbsp;<a href="/equipo/"> Conoce más</a></p>
+            <div  class="col-md-12">
+             <img style="width:180px; float:left; margin-top:30px;" class="img-responsive img-rounded" src="{{STATIC_URL}}inicio/images/secbi_logo_color.png" alt="">
+                <h1><strong>Semillero de ciencias básicas e ingeniería</strong></h1>
+                <p> Sitio del semillero <strong>SECBI</strong> de la Universidad Cooperativa Colombia sede Montería.</p>
 
-                {% endif %}
+                <p><a class="btn-primary btn-lg" href="/discusion/user/register/"> <i class="fa fa-users"></i>&nbsp;Ingresar</a>&nbsp;&nbsp;<a href="/equipo/"> Sobre esta iniciativa</a></p>
             </div>
         </div>
 
-         <div class="row">
-            <div class="col-lg-12">
-                <div class="well text-center">
-                    En <a href="http://docs.devhunter.co">Devhunter <i class="fa fa-book"></i> docs</a> puedes buscar material y recursos compartidos por la comunidad.
-                </div>
-            </div>

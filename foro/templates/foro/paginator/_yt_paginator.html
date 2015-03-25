@@ -1,8 +1,8 @@
 {% load i18n %}
-
-<ul class=" container">
+<hr>
+<ul>
     {% if page.num_pages == 1 %}
-        <li class="paginator-pages">{% trans "Page 1 of 1" %}</li>
+        <li class="paginator-pages">Página 1 de 1 </li>
     {% else %}
         {% if page.number > 1 %}
             <li><a class="paginator-button" href="?{{ page_var }}={{ page.previous_page_number }}{{ extra_query }}{{ hashtag }}"><i class="fa fa-chevron-left"></i></a></li>

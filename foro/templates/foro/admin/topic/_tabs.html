@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <ul class="tabs">
-	<li><a class="tab-link{% ifequal active_tab "deleted" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-deleted" %}" >{% trans "Deleted" %}</a></li><!--
- --><li><a class="tab-link{% ifequal active_tab "closed" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-closed" %}" >{% trans "Closed" %}</a></li><!--
- --><li><a class="tab-link{% ifequal active_tab "pinned" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-pinned" %}" >{% trans "Pinned" %}</a></li>
+	<li><a class="tab-link{% ifequal active_tab "deleted" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-deleted" %}" >Eliminado</a></li><!--
+ --><li><a class="tab-link{% ifequal active_tab "closed" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-closed" %}" >Cerrado</a></li><!--
+ --><li><a class="tab-link{% ifequal active_tab "pinned" %} is-selected{% endifequal %}" href="{% url "foro:admin-topic-pinned" %}" >Marcados</a></li>
 </ul>

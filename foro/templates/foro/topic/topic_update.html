@@ -2,17 +2,17 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "Update topic" %}{% endblock %}
+{% block title %}Actualizar tema{% endblock %}
 
 {% block content %}
 
-    <h1 class="headline">{% trans "Update topic" %}</h1>
+    <h1 class="headline">Actualizar tema</h1>
 
     <form action="." method="post">
         {% csrf_token %}
         {% include "foro/_form.html" %}
 
-        <input class="button" type="submit" name="post" value="{% trans "Update" %}" />
+        <input class="button" type="submit" name="post" value="Actualizar" />
     </form>
 
 {% endblock %}

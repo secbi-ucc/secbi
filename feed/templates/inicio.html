@@ -1,5 +1,5 @@
 {% extends "foro/_base.html" %}
-{% block title %} Comunidad {% endblock %}
+{% block title %} Inicio  {% endblock %}
 {% load foro_tags i18n %}
 
 {% block content %}
@@ -10,12 +10,12 @@
             <!-- General info -->
             <div class="col-md-3">
                <div class="list-group">
-                    <a href="https://trello.com/b/vbgSpQZs/tareas-devhunter" target="_blank" class="list-group-item">
-                    <i class="fa fa-trello"></i> Tareas y agenda
+                    <a href="https://trello.com/b/lHqIxNMI/secbi" target="_blank" class="list-group-item">
+                    Tareas y agenda <i  class="fa fa-calendar right-icon"></i>
                     </a>
-                    <a href="https://github.com/devhunterco" target="_blank" class="list-group-item"><i class="fa fa-github"></i> Repositorios </li>
+                    <a href="https://github.com/secbi-ucc" target="_blank" class="list-group-item"><i class="fa fa-github right-icon"></i> Repositorios
                     </a>
-                    <a href="https://gitter.im/devhunterco/General" target="_blank" class="list-group-item"><i class="fa fa-comments-o"></i> Chat </li>
+                    <a href="https://gitter.im/secbi-ucc/General" target="_blank" class="list-group-item"><i class="fa fa-comments-o right-icon"></i> Chat
                     </a>
                 </div>
                 {% for miembro in miembros_email %}
@@ -37,31 +37,20 @@
             </div>
 
 <!-- Eventos -->
-  <div class="col-md-6">
-      <h2><strong>Reuniones y eventos</strong></h2>
+  <div class="col-md-8">
+      <h2><strong>Debates</strong></h2>
         <hr>
-        {% for event in events%}
-        <div class="event">
-          <h2><a class="event-title" href="evento/{{event.id}}">{{event.title}}</a></h2>
-              <div class="meta">
-                  <a href=""><i class="fa fa-clock-o"></i> {{event.due_date}}</a>
-                  |
-                  <a href=""><i class="fa fa-file-code-o"></i> {{event.lugar}}</a>
-              </div>
-              <p>{{event.description_short}} </p>
-        </div>
-        {% endfor %}
+
+    {% include "foro/topic/_top_bar.html" with category=None categories=categories %}
+    {% include "foro/topic/_render_page_list.html" %}
+
+
+
+
   </div>
 
-              {% include "recent_activity.html" %}
 
-                 </div>
-                 <hr>
-
-            {% include "sponsors.html" %}
-
-
-
+</div>
 
 
 

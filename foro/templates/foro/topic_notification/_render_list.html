@@ -6,15 +6,15 @@
                 {% url "foro:comment-find" pk=n.comment.pk as url_topic %}
 
                 {% if n.is_comment %}
-                    {% blocktrans with username=n.comment.user.username topic_title=n.topic.title %}<a href="{{ url_profile }}">{{ username }}</a> has commented on <a href="{{ url_topic }}">{{ topic_title }}</a>{% endblocktrans %}
+                    {% blocktrans with username=n.comment.user.username topic_title=n.topic.title %}<a href="{{ url_profile }}">{{ username }}</a> Ha comentado en <a href="{{ url_topic }}">{{ topic_title }}</a>{% endblocktrans %}
                 {% elif n.is_mention %}
-                    {% blocktrans with username=n.comment.user.username topic_title=n.topic.title %}<a href="{{ url_profile }}">{{ username }}</a> has mention you on <a href="{{ url_topic }}">{{ topic_title }}</a>{% endblocktrans %}
+                    {% blocktrans with username=n.comment.user.username topic_title=n.topic.title %}<a href="{{ url_profile }}">{{ username }}</a> ye ha mencionado<a href="{{ url_topic }}">{{ topic_title }}</a>{% endblocktrans %}
                 {% else %}
                     Unknow action
                 {% endif %}
 
                 {% if not n.is_read %}
-                    <span class="row-unread">{% trans "unread" %}</span>
+                    <span class="row-unread">sin leer</span>
                 {% endif %}
             </div>
         {% empty %}

@@ -1,10 +1,11 @@
 {% load i18n %}
 
-    <div class="container">
-            <ul class="messages-info">
-        <li> <i class="fa fa-info-circle"></i> Estamos trabajando duro para desarrollar DevHunter. Por esta razón algunas funcionalidades aún no están  disponibles, excepto este foro. Siente libre de contribuir, ver el progreso o reportar algún bug en <a href="https://github.com/devhunterco/app">Github. </a></li>
-    </ul>
-		<div class="categories js-tabs-container">
+<div style="margin-bottom:30px;" class="top-ops">
+
+
+
+
+		<div style="display:inline-block;">
             {% if category %}
 			    <a class="dropdown-button js-tab" href="#" data-related=".js-categories-content">{{ category.title }} <i class="fa fa-chevron-down"></i></a>
 			{% else %}
@@ -23,13 +24,16 @@
                     {% endif %}
 				</ul>
 			</div>
+
+
 		</div>
 
-        <div class="new-topic">
+    <div style="display:inline-block; float:right;">
             {% if category %}
-                <a class="button button-primary" href="{% url "foro:topic-publish" category.pk %}"> <i class="fa fa-plus"></i> Crear un tema</a>
+                <a class="btn-success btn" href="{% url "foro:topic-publish" category.pk %}"> <i class="fa fa-plus"></i> </a>
             {% else %}
-                <a class="button button-primary" href="{% url "foro:topic-publish" %}"> <i class="fa fa-plus"></i> Crear un tema</a>
+                <a class="btn-success btn" href="{% url "foro:topic-publish" %}"> <i class="fa fa-plus"></i> </a>
             {% endif %}
-		</div>
-	</div>
+        </div>
+
+</div>

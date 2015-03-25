@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
         <ul class="nav">
-            <li><a href="{% url "foro:index" %}" >{% trans "Main" %}</a><i class="fa fa-chevron-right"></i></li>
+            <li><a href="{% url "foro:index" %}" >Inicio</a><i class="fa fa-chevron-right"></i></li>
 
             {% if topic.category.parent_id %}
                <li><a href="{{ topic.category.parent.get_absolute_url }}" >{{ topic.category.parent.title }}</a><i class="fa fa-chevron-right"></i></li>
@@ -42,21 +42,21 @@
                         <li><a class="menu-link js-show-move-comments" href="#" ><i class="fa fa-comments"></i> {% trans "Select comments to move" %}</a></li>
 
                         {% if topic.is_removed %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-undelete" topic.pk %}" ><i class="fa fa-trash-o"></i> {% trans "Undelete topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-undelete" topic.pk %}" ><i class="fa fa-trash-o"></i> Restaurar</a></li>
                         {% else %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-delete" topic.pk %}" ><i class="fa fa-trash-o"></i> {% trans "Delete topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-delete" topic.pk %}" ><i class="fa fa-trash-o"></i> Eliminar tema</a></li>
                         {% endif %}
 
                         {% if topic.is_closed %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-unlock" topic.pk %}" ><i class="fa fa-unlock"></i> {% trans "Open topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-unlock" topic.pk %}" ><i class="fa fa-unlock"></i> Abrir tema</a></li>
                         {% else %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-lock" topic.pk %}" ><i class="fa fa-lock"></i> {% trans "Close topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-lock" topic.pk %}" ><i class="fa fa-lock"></i> Cerrar tema</a></li>
                         {% endif %}
 
                         {% if topic.is_pinned %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-unpin" topic.pk %}" ><i class="fa fa-thumb-tack"></i> {% trans "Unpin topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-unpin" topic.pk %}" ><i class="fa fa-thumb-tack"></i> Desmascar tema</a></li>
                         {% else %}
-                            <li><a class="menu-link js-post" href="{% url "foro:topic-pin" topic.pk %}" ><i class="fa fa-thumb-tack"></i> {% trans "Pin topic" %}</a></li>
+                            <li><a class="menu-link js-post" href="{% url "foro:topic-pin" topic.pk %}" ><i class="fa fa-thumb-tack"></i> Marcar tema</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="move-container">
                     <label class="move-label">{% trans "Topic id" %}:</label><!--
                  --><div class="move-input"><input id="id_move_comments_topic" name="topic" type="text" value="" /></div><!--
-                 --><a class="move-link js-move-comments" href="#move_to">{% trans "Move" %}</a>
+                 --><a class="move-link js-move-comments" href="#move_to">Mover</a>
                 </div>
             </div>
         {% endif %}
@@ -86,7 +86,7 @@
                 {% if user.is_authenticated %}
                     {% render_notification_form user=user topic=topic %}
                 {% elif not topic.is_closed %}
-                    <a class="button" href="{% url "foro:comment-publish" topic_id=topic.pk %}">{% trans "Reply" %}</a>
+                    <a class="button" href="{% url "foro:comment-publish" topic_id=topic.pk %}">Responder</a>
                 {% endif %}
             </div>
         </div>
