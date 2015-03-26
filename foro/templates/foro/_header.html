@@ -41,7 +41,7 @@
             </div>
         {% else %}
 
-            <a class="header-link" href="#"> Registrate</a>
+            <a class="header-link" href="{% url "foro:user-register" %}"> Registrate</a>
             <span class="header-link">&nbsp; ó &nbsp;</span>
             <a class="header-link" href="{% url "foro:user-login" %}?next={% firstof request.get_full_path|urlencode '/' %}">Ingresa <a>
 

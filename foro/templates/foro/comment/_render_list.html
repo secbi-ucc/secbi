@@ -48,27 +48,27 @@
                     <ul class="comment-actions">
                         {% if user.is_authenticated %}
                             {% if user.is_moderator %}
-                                <li><a href="{% url "foro:comment-delete" c.pk %}"><i class="fa fa-times"></i> {% trans "delete" %}</a></li>
+                                <li><a href="{% url "foro:comment-delete" c.pk %}"><i class="fa fa-times"></i> Eliminar</a></li>
                             {% endif %}
 
-                            <li><a href="{% url "foro:flag-create" c.pk %}"><i class="fa fa-flag"></i> {% trans "report" %}</a></li>
+                            <li><a href="{% url "foro:flag-create" c.pk %}"><i class="fa fa-flag"></i> Reportar</a></li>
                         {% endif %}
 
-                        <li><a class="js-share" href="#" data-dialog=".js-share-{{ c.pk }}"><i class="fa fa-share"></i> {% trans "share" %}</a></li>
+                        <li><a class="js-share" href="#" data-dialog=".js-share-{{ c.pk }}"><i class="fa fa-share"></i> Compartir</a></li>
 
                         {% if user.is_authenticated %}
                             {% if c.like %}
-                                <li class="comment-like"><a class="js-like" href="{% url "foro:like-delete" c.like.pk %}" data-count="{{ c.likes_count }}" ><i class="fa fa-heart"></i> {% trans "remove like" %} ({{ c.likes_count }})</a></li>
+
                             {% else %}
                                 {% ifnotequal c.user user  %}
-                                    <li class="comment-like"><a class="js-like" class="like" href="{% url "foro:like-create" c.pk %}" data-count="{{ c.likes_count }}" ><i class="fa fa-heart"></i> {% trans "like" %} ({{ c.likes_count }})</a></li>
+                                    <li class="comment-like"><a class="js-like" class="like" href="{% url "foro:like-create" c.pk %}" data-count="{{ c.likes_count }}" ><i class="fa fa-heart"></i> Me gusta ({{ c.likes_count }})</a></li>
                                 {% else %}
                                     <li class="comment-like"><i class="fa fa-heart"></i> ({{ c.likes_count }})</li>
                                 {% endifnotequal %}
                             {% endif %}
 
                             {% if user.is_moderator or c.user.pk == user.pk %}
-                                <li><a href="{% url "foro:comment-update" pk=c.pk %}" >{% trans "edit" %}</a></li>
+                                <li><a href="{% url "foro:comment-update" pk=c.pk %}" >Editar</a></li>
                             {% endif %}
 
                             {% ifnotequal c.user.pk user.pk %}

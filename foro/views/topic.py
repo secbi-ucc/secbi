@@ -14,7 +14,7 @@ from foro.models.comment import MOVED, CLOSED, UNCLOSED, PINNED, UNPINNED
 from foro.forms.comment import CommentForm
 from foro.signals.comment import comment_posted
 from foro.forms.topic_poll import TopicPollForm, TopicPollChoiceFormSet
-
+from foro.models.user import User
 from foro.models.topic import Topic
 from foro.forms.topic import TopicForm
 from foro.signals.topic import topic_viewed, topic_post_moderate
@@ -82,14 +82,19 @@ def topic_update(request, pk):
 
 def topic_detail(request, pk, slug):
     topic = Topic.objects.get_public_or_404(pk, request.user)
+    miembros_email = User.objects.filter(es_destacado=True)
+    miembros_count = User.objects.all().count()
 
     if topic.slug != slug:
         return HttpResponsePermanentRedirect(topic.get_absolute_url())
 
     topic_viewed.send(sender=topic.__class__, request=request, topic=topic)
 
-    return render(request, 'foro/topic/topic_detail.html', {'topic': topic,
-                                                              'COMMENTS_PER_PAGE': settings.ST_COMMENTS_PER_PAGE})
+    return render(request, 'foro/topic/topic_detail.html',
+                  {'topic': topic,
+                   'COMMENTS_PER_PAGE': settings.ST_COMMENTS_PER_PAGE,
+                   'miembros_email': miembros_email,
+                   'miembros_count': miembros_count})
 
 
 @moderator_required

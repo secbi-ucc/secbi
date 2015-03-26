@@ -37,9 +37,9 @@
     </div>
 
     <div class="login-links">
-		<a class="login-link" href="#">Crear una cuenta</a>
+		<a class="login-link" href="{% url "foro:user-register" %}">Crear una cuenta</a>
 		<!--<a class="login-link" href="{% url "foro:password-reset" %}">No recuerdo mi contraseña</a>-->
-        <a class="login-link" href="#">Reenviar correo de activación </a>
+        <a class="login-link" href="{% url "foro:resend-activation" %">Reenviar correo de activación </a>
 	</div>
 </div>
 </div>
