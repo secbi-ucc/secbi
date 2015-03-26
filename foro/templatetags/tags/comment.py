@@ -24,7 +24,7 @@ def render_comments_form(topic, next=None):
 @register.simple_tag()
 def get_comment_action_text(action):
     if action == MOVED:
-        return _("This topic has been moved")
+        return _("Este tema ha sido movido")
     elif action == CLOSED:
         return _("This topic has been closed")
     elif action == UNCLOSED:
