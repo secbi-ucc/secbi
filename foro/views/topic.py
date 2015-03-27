@@ -80,6 +80,7 @@ def topic_update(request, pk):
     return render(request, 'foro/topic/topic_update.html', {'form': form, })
 
 
+@login_required
 def topic_detail(request, pk, slug):
     topic = Topic.objects.get_public_or_404(pk, request.user)
     miembros_email = User.objects.filter(es_destacado=True)
