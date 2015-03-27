@@ -21,7 +21,7 @@ def ratelimit(method=None, field=None, rate='5/5m'):
             request.is_limited = rl.is_limited()
 
             if request.is_limited:
-                messages.error(request, _("Too many submissions, wait %(time)s.") % {'time': rate.split('/')[1], })
+                messages.error(request, _("Muchas peticiones, espera %(time)s.") % {'time': rate.split('/')[1], })
 
             return func(request, *args, **kwargs)
 

@@ -26,7 +26,7 @@ from ..forms.user import UserProfileForm, RegistrationForm, LoginForm, EmailChan
 User = get_user_model()
 
 
-@ratelimit(field='username', rate='5/5m')
+@ratelimit(field='username', rate='5/5s')
 def custom_login(request, **kwargs):
     # Current Django 1.5 login view does not redirect somewhere if the user is logged in
     if request.user.is_authenticated():
