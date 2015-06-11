@@ -19,6 +19,8 @@ ROOT_URLCONF = 'devhunt.urls'
 
 WSGI_APPLICATION = 'devhunt.wsgi.application'
 
+DEFAULT_FROM_EMAIL = 'Semillero Secbi <usuarios@secbi.co>'
+
 # Zona horaia destino
 
 TIME_ZONE = 'America/Bogota'

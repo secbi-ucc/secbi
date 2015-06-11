@@ -49,11 +49,7 @@ def custom_logout(request, **kwargs):
     return render(request, 'foro/user/logout.html')
 
 
-@ratelimit(field='email', rate='5/5m')
 def custom_reset_password(request, **kwargs):
-    if request.is_limited and request.method == "POST":
-        return redirect(reverse("foro:password-reset"))
-
     return password_reset(request, **kwargs)
 
 
