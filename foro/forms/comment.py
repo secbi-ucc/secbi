@@ -8,7 +8,7 @@ import os
 from django import forms
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.utils.image import Image
+from PIL import Image
 
 from foro.models.comment import Comment
 from foro.models.topic import Topic
