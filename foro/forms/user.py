@@ -158,7 +158,7 @@ class PasswordResetForm(forms.Form):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        if User.objects.exclude(pk=self.instance.pk).filter(email=email).exists():
+        if User.objects.filter(email=email).exists():
             return email
         else:
             raise forms.ValidationError(u'El correo "%s" no esta asociado a un usuario registrado' % email)
