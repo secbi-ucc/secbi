@@ -7,20 +7,25 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.views import login as login_view
-from django.contrib.auth.views import password_reset, logout
+from django.contrib.auth.views import logout
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.http import HttpResponsePermanentRedirect
-
+from django.contrib.auth.tokens import default_token_generator
+from django.shortcuts import resolve_url
+from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_protect
+from django.template.response import TemplateResponse
 from foro.utils.ratelimit.decorators import ratelimit
 from foro.utils.user.email import send_activation_email, send_email_change_email
 from foro.utils.user.tokens import UserActivationTokenGenerator, UserEmailChangeTokenGenerator
 
+
 from ..models.topic import Topic
 from ..models.comment import Comment
 
-from ..forms.user import UserProfileForm, RegistrationForm, LoginForm, EmailChangeForm, ResendActivationForm
+from ..forms.user import UserProfileForm, RegistrationForm, LoginForm, EmailChangeForm, ResendActivationForm, PasswordResetForm
 
 
 User = get_user_model()
@@ -47,6 +52,50 @@ def custom_logout(request, **kwargs):
         return logout(request, **kwargs)
 
     return render(request, 'foro/user/logout.html')
+
+@csrf_protect
+def password_reset(request, is_admin_site=False,
+                   template_name='foro/user/password_reset_form.html',
+                   email_template_name='foro/user/password_reset_email.html',
+                   subject_template_name='foro/user/password_reset_subject.txt',
+                   password_reset_form=PasswordResetForm,
+                   token_generator=default_token_generator,
+                   post_reset_redirect=None,
+                   from_email=None,
+                   current_app=None,
+                   extra_context=None,
+                   html_email_template_name=None):
+    if post_reset_redirect is None:
+        post_reset_redirect = reverse('password_reset_done')
+    else:
+        post_reset_redirect = resolve_url(post_reset_redirect)
+    if request.method == "POST":
+        form = password_reset_form(request.POST)
+        if form.is_valid():
+            opts = {
+                'use_https': request.is_secure(),
+                'token_generator': token_generator,
+                'from_email': from_email,
+                'email_template_name': email_template_name,
+                'subject_template_name': subject_template_name,
+                'request': request,
+                'html_email_template_name': html_email_template_name,
+            }
+            form.save(**opts)
+            return HttpResponseRedirect(post_reset_redirect)
+    else:
+        form = password_reset_form()
+    context = {
+        'form': form,
+        'title': _('Password reset'),
+    }
+    if extra_context is not None:
+        context.update(extra_context)
+
+    if current_app is not None:
+        request.current_app = current_app
+
+    return TemplateResponse(request, template_name, context)
 
 
 @ratelimit(field='email', rate='2/2m')
