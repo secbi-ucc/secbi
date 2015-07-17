@@ -54,7 +54,7 @@ def custom_logout(request, **kwargs):
     return render(request, 'foro/user/logout.html')
 
 @csrf_protect
-def password_reset(request, is_admin_site=False,
+def custom_reset_password(request, is_admin_site=False,
                    template_name='foro/user/password_reset_form.html',
                    email_template_name='foro/user/password_reset_email.html',
                    subject_template_name='foro/user/password_reset_subject.txt',
@@ -96,13 +96,6 @@ def password_reset(request, is_admin_site=False,
         request.current_app = current_app
 
     return TemplateResponse(request, template_name, context)
-
-
-def custom_reset_password(request, **kwargs):
-    if request.method == "POST":
-        return redirect(reverse("foro:password-reset"))
-
-    return password_reset(request, **kwargs)
 
 
 @ratelimit(rate='2/10s')
