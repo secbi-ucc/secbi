@@ -98,9 +98,8 @@ def password_reset(request, is_admin_site=False,
     return TemplateResponse(request, template_name, context)
 
 
-@ratelimit(field='email', rate='2/2m')
 def custom_reset_password(request, **kwargs):
-    if request.is_limited and request.method == "POST":
+    if request.method == "POST":
         return redirect(reverse("foro:password-reset"))
 
     return password_reset(request, **kwargs)
