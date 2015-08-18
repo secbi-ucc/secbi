@@ -227,7 +227,6 @@ def profile_topics(request, pk, slug):
     return render(request, 'foro/user/profile_topics.html', {'p_user': p_user, 'topics': topics})
 
 
-@login_required
 def profile_comments(request, pk, slug):
     p_user = get_object_or_404(User, pk=pk)
 
