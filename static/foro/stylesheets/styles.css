@@ -453,9 +453,7 @@ html {
   left: 0;
   bottom: 0;
   height: 100px;
-  width: 100%;
-  padding-top:30px;
-  border-top: 1px solid #e4e2e2; }
+  width: 100%; }
 
 fieldset {
   border: 0;
@@ -735,9 +733,12 @@ input[type="submit"].button,
     margin-top:30px;
     margin-right: 80px;
     margin-left: 30px;
+    margin-bottom: 15px;
 }
 .banner{
     background: #1A2D3F;
+    opacity: 0.9;
+    margin-top:50px;
 }
 
 .banner p {
@@ -1021,7 +1022,7 @@ input.move-comment-checkbox {
 }
 
 .nav-link-active{
-  border-bottom: 3px solid #3cadd4;
+  border-bottom: 3px solid #2BBAC3;
   border-top: 1px solid #e4e2e2;
   text-decoration: none;
   background-color: #eee;
@@ -1174,6 +1175,12 @@ ul.reply-markdown {
   .share-actions li {
     margin-left: 24px; }
 
+@media (min-width: 1200px){
+    .container {
+        width: 920px;
+}
+}
+
 @media screen and (min-width: 768px) {
   .menu,
   .participants-menu {
@@ -1273,7 +1280,20 @@ ul.reply-markdown {
       width: 48.21067%;
       text-align: right; }
       .private-leave:last-child {
-        margin-right: 0; } }
+        margin-right: 0; }
+
+     }
+
+ @media screen and (max-width: 768px) {
+     .banner {
+         margin-top: 0;
+     }
+
+     .row {
+         padding: 0;
+     }
+
+ }
 
 .participants-menu {
   margin-bottom: 12px; }
@@ -1366,7 +1386,10 @@ ul.reply-markdown {
   margin-bottom: 24px; }
   @media screen and (min-width: 768px) {
     .new-category {
-      text-align: right; } }
+      text-align: right; }
+
+
+  }
 
 /*
 div.container {
