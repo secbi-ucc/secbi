@@ -1,16 +1,11 @@
 {% load foro_tags i18n %}
 
-
 <div class="container">
 
 
-    <div style="padding:0; margin-top:50px;" class="nav-fixed nav">
-
-
-
-
-        {% include "jumbotron.html" %}
-
+<div class="row">
+    {% include "jumbotron.html" %}
+    <div class="nav-fixed nav">
         <ul class="header-tabs">
             {% if user.is_authenticated %}
                 {% has_topic_notifications user as has_notifications %}
@@ -39,4 +34,5 @@
         <li><a class="nav-link {% if request.get_full_path = "/equipo/" %} nav-link-active {% endif %}" href="/equipo">Sobre</a></li>
 
     </div>
+</div>
 </div>

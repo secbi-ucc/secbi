@@ -14,7 +14,7 @@ def inicio(request):
     topics = topics | topics_pinned
     topics = topics.order_by('-is_pinned', '-last_active').select_related('category')
     categories = Category.objects.for_parent()
-    miembros_email = User.objects.filter(es_destacado=True)
+    miembros_email = User.objects.filter(es_destacado=True).order_by('id')
     miembros_count = User.objects.all().count()
     events = Event.objects.all()
     return render(request, 'inicio.html', {'miembros_email': miembros_email,

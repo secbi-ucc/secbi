@@ -2,8 +2,9 @@
 {% block title %} Inicio  {% endblock %}
 {% load foro_tags i18n %}
 
+
 {% block content %}
-<div class="container ">
+<div class="container">
 
 
         <div  class="row ">
@@ -23,7 +24,7 @@
                 {% for miembro in miembros_email %}
                     <div style="margin-top:5px;">
                         <a href="discusion/user/{{miembro.id}}"><img style="border-radius:5px;"  src="{% get_gravatar_url miembro 50 %}" alt=""></a>
-                        <span><a href="discusion/user/{{miembro.id}}">{{miembro.get_full_name}}</a></span>
+                        <span><a style="font-size:12px;" href="discusion/user/{{miembro.id}}">{{miembro.get_full_name}}</a></span>
                     </div>
                 {% empty %}
                 <p>No hay miembros</p>
@@ -33,8 +34,8 @@
             </div>
 
 <!-- Eventos -->
-  <div style="background:white;" class="col-md-9">
-      <h2><strong>Debates</strong></h2>
+  <div style="background:white;" class="col-md-9 col-sm-5">
+      <h2><strong>Aportes</strong></h2>
         <hr>
 
     {% include "foro/topic/_top_bar.html" with category=None categories=categories %}
@@ -47,7 +48,4 @@
 
 
 </div>
-
-
-
 {% endblock %}
