@@ -25,6 +25,7 @@ body {
   color: rgba(0, 0, 0, 0.67);
   font-size: 16px;
   line-height: 1.4;
+  background: #EEE;
  }
 
 /* HTML5 display definitions
@@ -454,7 +455,6 @@ body {
   bottom: 0;
   height: 100px;
   width: 100%;
-  background-color:#f8f8f8;
   padding-top:30px;
   border-top: 1px solid #e4e2e2; }
 
@@ -728,11 +728,27 @@ input[type="submit"].button,
 
 }
 
-.header-gray{
-  background-color:#FAFAFA;
-  padding-top:5px;
-  padding-bottom:5px;
+.container {
+    width: 1000px !important;
+}
 
+.logo-c{
+    width:135px;
+    float:left;
+    margin-top:30px;
+    margin-right: 80px;
+    margin-left: 30px;
+}
+.banner{
+    background: #1A2D3F;
+}
+
+.banner p {
+    color: white;
+}
+
+.banner-title{
+    color:white;
 }
 
 .header-logo {
