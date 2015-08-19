@@ -10,34 +10,27 @@
 <div class="row">
             <!-- General info -->
             <div class="col-md-3">
-                <img src="{{STATIC_URL}}inicio/images/secbi_logo_color.png" alt="">
-
-                <br>
                <div class="list-group">
-                    <a href="https://trello.com/b/lHqIxNMI/secbi" target="_blank" class="list-group-item">
-                    Tareas y agenda <i  class="fa fa-calendar right-icon"></i>
-                    </a>
+
                     <a href="https://github.com/secbi-ucc" target="_blank" class="list-group-item"><i class="fa fa-github right-icon"></i> Repositorios
                     </a>
-                    <a href="https://gitter.im/secbi-ucc/General" target="_blank" class="list-group-item"><i class="fa fa-comments-o right-icon"></i> Chat
-                    </a>
                 </div>
-                {% for miembro in miembros_email %}
-                <a href="/discusion/user/{{miembro.id}}"><img class="avatar-list" src="{% get_gravatar_url miembro 60 %}" alt=""></a>
-                {% empty %}
-                <p>No hay miembros</p>
-                {% endfor %}
-
                 <ul class="numbers list-group">
                     <li class="list-group-item">
                         <span class="badge">{{miembros_count}}</span>
                          Miembros
                     </li>
-                    <li class="list-group-item">
-                        <span class="badge">1</span>
-                        Reuniones pasadas
-                    </li>
                 </ul>
+                {% for miembro in miembros_email %}
+                    <div style="margin-top:5px;">
+                        <a href="discusion/user/{{miembro.id}}"><img style="border-radius:5px;"  src="{% get_gravatar_url miembro 50 %}" alt=""></a>
+                        <span><a style="font-size:12px;" href="discusion/user/{{miembro.id}}">{{miembro.get_full_name}}</a></span>
+                    </div>
+                {% empty %}
+                <p>No hay miembros</p>
+                {% endfor %}
+
+
             </div>
 
 <!-- Eventos -->
